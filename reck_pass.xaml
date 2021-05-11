@@ -1,0 +1,32 @@
+﻿<mah:MetroWindow x:Class="Journal_Diplom.reck_pass"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Journal_Diplom"
+        mc:Ignorable="d"
+        Title="Восстановленние пароля" Height="181" Width="310" ResizeMode="CanMinimize" Background="#FF252525" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Canvas x:Name="email" Visibility="Visible">
+            <TextBox x:Name="r_pass" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="168" Canvas.Left="12" Canvas.Top="54" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" CaretBrush="#FF0078D7"/>
+            <Label Content="Введите почту к которой привязан аккаунт" HorizontalAlignment="Left" VerticalAlignment="Top" Width="269" Canvas.Left="12" Canvas.Top="23" Foreground="#FF0767B3"/>
+            <Button x:Name="rec_pass" Content="Восстановить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Height="28" Click="rec_pass_Click" Canvas.Left="185" Canvas.Top="54" FontSize="10" Background="#FF0767B3" BorderBrush="{x:Null}"/>
+            <Label x:Name="error" Canvas.Left="12" Canvas.Top="82" Width="269" Foreground="Red" FontSize="10" Height="21" HorizontalContentAlignment="Center" Background="{x:Null}"/>
+        </Canvas>
+        <Canvas x:Name="recovery_kod" Visibility="Hidden">
+            <TextBox x:Name="kod" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="65" Canvas.Left="72" Canvas.Top="54" PreviewTextInput="kod_PreviewTextInput" PreviewKeyDown="kod_PreviewKeyDown" Background="#FF38393E" BorderBrush="{x:Null}" CaretBrush="#FF0078D7" Foreground="White" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
+            <Button x:Name="chek_kod" Content="Проверить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Height="22" Click="chek_kod_Click" Canvas.Left="142" Canvas.Top="54" FontSize="10" Background="#FF0767B3" BorderBrush="{x:Null}"/>
+            <Label Content="Введите проверочный код" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162" Canvas.Left="72" Canvas.Top="25" Foreground="#FF0767B3"/>
+            <Label x:Name="error1" Content="" Canvas.Left="72" Canvas.Top="84" Width="169" Foreground="Red" FontSize="10" HorizontalContentAlignment="Center"/>
+        </Canvas>
+        <Canvas x:Name="edit" Visibility="Hidden">
+            <PasswordBox x:Name="edit_pass" HorizontalAlignment="Left" Height="23" Margin="112,22,0,0" VerticalAlignment="Top" Width="120" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" CaretBrush="#FF0078D7" Foreground="White"/>
+            <PasswordBox x:Name="rep_edit_pass" HorizontalAlignment="Left" Height="23" Margin="112,58,0,0" VerticalAlignment="Top" Width="120" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" CaretBrush="#FF0078D7" Foreground="White"/>
+            <Label Content="Пароль:" HorizontalAlignment="Left" Margin="29,19,0,0" VerticalAlignment="Top" Foreground="#FF0767B3" />
+            <Label Content="Повтор пароля:" HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" Foreground="#FF0767B3"/>
+            <Button x:Name="finaly_edit_pass" Content="Изменить" HorizontalAlignment="Left" Margin="112,93,0,0" VerticalAlignment="Top" Width="120" Click="finaly_edit_pass_Click" Background="#FF0767B3" BorderBrush="{x:Null}" mah:ControlsHelper.FocusBorderBrush="#FF0078D7"/>
+            <Label x:Name="error2" Content="" Canvas.Left="94" Canvas.Top="125" Width="168"  Foreground="Red" FontSize="10" HorizontalContentAlignment="Center"/>
+        </Canvas>
+    </Grid>
+</mah:MetroWindow>

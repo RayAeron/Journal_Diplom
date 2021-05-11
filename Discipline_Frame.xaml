@@ -1,0 +1,23 @@
+﻿<Page x:Class="Journal_Diplom.Discipline_Frame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="558" d:DesignWidth="944"
+      Title="Discipline_Frame">
+    <Grid>
+        <DataGrid x:Name="discipline_grid" Canvas.Left="5" Canvas.Top="71" Width="929" Background="#FF252525" BorderBrush="#FF0767B3" Foreground="#FF0767B3" SelectionChanged="discipline_grid_SelectionChanged" Margin="5,10,10,180"/>
+        <TextBox x:Name="name_disc" Height="32" Canvas.Left="96" Canvas.Top="389" Width="178" BorderBrush="#FF0078D7" HorizontalContentAlignment="Center" Foreground="#FF0767B3" CaretBrush="#FF0078D7" Margin="10,411,756,115"/>
+        <RadioButton x:Name="add_disc" Content="Добавить дисциплину" HorizontalAlignment="Left" Margin="474,450,0,0" VerticalAlignment="Top" Checked="check_disc" GroupName="add_edit_disc" Background="#FF0767B3" BorderBrush="{x:Null}" Foreground="#FF0767B3" FontSize="14"/>
+        <RadioButton x:Name="edit_disc" Content="Изменить дисциплину" HorizontalAlignment="Left" Margin="640,450,0,0" VerticalAlignment="Top" Checked="check_disc" GroupName="add_edit_disc" Foreground="#FF0767B3" Background="#FF0767B3" BorderBrush="{x:Null}" FontSize="14"/>
+        <Button x:Name="add_discipline_btn" HorizontalAlignment="Left" Margin="474,390,0,0" VerticalAlignment="Top" Width="195" Content="Добавить дисциплину" BorderBrush="#FF0767B3" Foreground="White" Background="#FF0767B3" FontSize="12" Height="32" Click="add_discipline_btn_Click" />
+        <ComboBox x:Name="discipline_group" HorizontalAlignment="Left" Margin="193,411,0,0" VerticalAlignment="Top" Width="120"  Foreground="#FF0767B3" BorderBrush="#FF0767B3" Height="32"  HorizontalContentAlignment="Center"/>
+        <ComboBox x:Name="discipline_teacher" HorizontalAlignment="Left" Margin="318,411,0,0" VerticalAlignment="Top" Width="120"  Foreground="#FF0767B3" BorderBrush="#FF0767B3" Height="32"  HorizontalContentAlignment="Center"/>
+        <Label x:Name="id_disc" Content="" HorizontalAlignment="Left" Margin="51,451,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label Content="Группа" Foreground="#FF0767B3" Margin="193,383,631,152" HorizontalContentAlignment="Center"/>
+        <Label Content="Преподаватель" Foreground="#FF0767B3" Margin="318,383,506,152" HorizontalContentAlignment="Center"/>
+        <Label Content="Название дисциплины" Foreground="#FF0767B3" Margin="10,383,756,152" HorizontalContentAlignment="Center"/>
+        <Button x:Name="del_dis" Content="Удалить дисциплину" HorizontalAlignment="Left" Margin="674,390,0,0" VerticalAlignment="Top" Width="171" BorderBrush="#FF0767B3" Foreground="White" Background="#FF0767B3" FontSize="12" Click="del_dis_Click"/>
+    </Grid>
+</Page>
