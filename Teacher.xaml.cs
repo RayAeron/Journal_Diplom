@@ -2,7 +2,9 @@
 using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -31,6 +33,20 @@ namespace Journal_Diplom
         public Teacher()
         {
             InitializeComponent();
+
+            WebClient client = new WebClient();
+            try
+            {
+                using (client.OpenRead("http://www.google.com"))
+                {
+                }
+            }
+            catch (WebException)
+            {
+                MessageBox.Show("Проверьте подлючение к интернету");
+                this.Close();
+                Process.GetCurrentProcess().Kill();
+            }
 
             Journal = new Journal();
             usersTableAdapter = new usersTableAdapter();
@@ -242,7 +258,7 @@ namespace Journal_Diplom
                     group_iner = grop_id;
                 }
             }
-            Mark_VTableAdapter.FillBy2(Journal.Mark_V, group_search.Text);
+            //Mark_VTableAdapter.FillBy2(Journal.Mark_V, group_search.Text);
 
             mark_student.Items.Clear();
             mark_d.Items.Clear();

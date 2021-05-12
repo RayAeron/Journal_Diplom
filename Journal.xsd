@@ -67,7 +67,7 @@ SELECT id_discipline, Name_discipline, id_group, id_teacher FROM discipline WHER
               <Mapping SourceColumn="id_teacher" DataSetColumn="id_teacher" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [discipline] WHERE id_discipline =@id_discipline</CommandText>
@@ -77,7 +77,7 @@ SELECT id_discipline, Name_discipline, id_group, id_teacher FROM discipline WHER
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.discipline" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.discipline" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT id_discipline, Name_discipline, id_group, id_teacher FROM dbo.discipline WHERE Name_discipline =@Name_discipline</CommandText>
@@ -87,7 +87,7 @@ SELECT id_discipline, Name_discipline, id_group, id_teacher FROM discipline WHER
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.discipline" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.discipline" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy11" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy11" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT id_discipline, Name_discipline, id_group, id_teacher FROM dbo.discipline WHERE id_group=@id_group</CommandText>
@@ -395,7 +395,7 @@ SELECT id_mark, Mark, Date_mark, id_discipline, id_student FROM mark WHERE (id_m
               <Mapping SourceColumn="id_student" DataSetColumn="id_student" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [mark] WHERE id_mark =@id_mark</CommandText>
@@ -405,7 +405,7 @@ SELECT id_mark, Mark, Date_mark, id_discipline, id_student FROM mark WHERE (id_m
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery1" Modifier="Public" Name="DeleteQuery1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="DeleteQuery1">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery1" Modifier="Public" Name="DeleteQuery1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteQuery1">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [mark] WHERE id_student =@id_student</CommandText>
@@ -415,7 +415,7 @@ SELECT id_mark, Mark, Date_mark, id_discipline, id_student FROM mark WHERE (id_m
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.mark" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.mark" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT id_mark, Mark, Date_mark, id_discipline, id_student FROM dbo.mark WHERE Mark=@Mark or Date_mark = @Date_mark or id_discipline=@id_discipline or id_student = @id_student  </CommandText>
@@ -428,7 +428,7 @@ SELECT id_mark, Mark, Date_mark, id_discipline, id_student FROM mark WHERE (id_m
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.mark" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.mark" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy11" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy11" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT id_mark, Mark, Date_mark, id_discipline, id_student FROM dbo.mark WHERE  Date_mark =@Date_mark AND id_discipline = @id_discipline AND id_student = @id_student</CommandText>
@@ -456,7 +456,7 @@ WHERE        (id_mark = @id_mark) OR (Mark = @Mark) OR (Date_mark = @Date_mark) 
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQuery">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InsertQuery">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>INSERT INTO [dbo].[mark] ([Mark], [Date_mark], [id_discipline], [id_student]) VALUES (@Mark, @Date_mark, @id_discipline, @id_student);
@@ -470,7 +470,7 @@ SELECT id_mark, Mark, Date_mark, id_discipline, id_student FROM mark WHERE (id_m
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="UpdateQuery">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery" Modifier="Public" Name="UpdateQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateQuery">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       mark
@@ -483,7 +483,7 @@ WHERE        (id_mark = @id_mark) </CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery1" Modifier="Public" Name="UpdateQuery1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="UpdateQuery1">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery1" Modifier="Public" Name="UpdateQuery1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateQuery1">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       mark
@@ -496,7 +496,7 @@ WHERE        (id_mark = @id_mark) </CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery2" Modifier="Public" Name="UpdateQuery2" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="UpdateQuery2">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery2" Modifier="Public" Name="UpdateQuery2" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="UpdateQuery2">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       mark
@@ -509,7 +509,7 @@ WHERE        (id_mark = @id_mark) </CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery3" Modifier="Public" Name="UpdateQuery3" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="UpdateQuery3">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery3" Modifier="Public" Name="UpdateQuery3" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="UpdateQuery3">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       mark
@@ -604,7 +604,7 @@ SELECT id_user, Surname, Name, Patronymic, Email, Pass, is_staff, id_group FROM 
               <Mapping SourceColumn="id_group" DataSetColumn="id_group" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="DeleteQuery">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery" Modifier="Public" Name="DeleteQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>DELETE FROM [users] WHERE id_user =@id_user</CommandText>
@@ -614,7 +614,17 @@ SELECT id_user, Surname, Name, Patronymic, Email, Pass, is_staff, id_group FROM 
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteQuery1" Modifier="Public" Name="DeleteQuery1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy14" UserSourceName="DeleteQuery1">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM [users] WHERE id_group =@id_group</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="id_group" ColumnName="id_group" DataSourceName="Journal_app.dbo.users" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id_group" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id_group" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT id_user, Surname, Name, Patronymic, Email, Pass, is_staff, id_group FROM dbo.users WHERE Email= @Email</CommandText>
@@ -624,7 +634,7 @@ SELECT id_user, Surname, Name, Patronymic, Email, Pass, is_staff, id_group FROM 
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.users" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy11" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy11" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT id_user, Surname, Name, Patronymic, Email, Pass, is_staff, id_group FROM dbo.users WHERE (Email = @Email) AND (Pass = @Pass)</CommandText>
@@ -751,7 +761,7 @@ WHERE         (Email= @Email)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery4" Modifier="Public" Name="UpdateQuery4" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="UpdateQuery4">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery4" Modifier="Public" Name="UpdateQuery4" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="UpdateQuery4">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       users
@@ -764,7 +774,7 @@ WHERE        (Email= @Email)</CommandText>
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery5" Modifier="Public" Name="UpdateQuery5" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="UpdateQuery5">
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="UpdateQuery5" Modifier="Public" Name="UpdateQuery5" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="UpdateQuery5">
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>UPDATE       users
@@ -800,62 +810,6 @@ WHERE        (Email = @Email)</CommandText>
               <Mapping SourceColumn="Email" DataSetColumn="Почта" />
             </Mappings>
             <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Mark_VTableAdapter" GeneratorDataComponentClassName="Mark_VTableAdapter" Name="Mark_V" UserDataComponentName="Mark_VTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.Mark_V" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT id_mark, Mark, Date_mark, Name_group, Surname, Name, Patronymic, Email, Name_discipline FROM dbo.Mark_V</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="id_mark" DataSetColumn="id_mark" />
-              <Mapping SourceColumn="Mark" DataSetColumn="Оценка" />
-              <Mapping SourceColumn="Date_mark" DataSetColumn="Дата оценки" />
-              <Mapping SourceColumn="Name_group" DataSetColumn="Наименование группы" />
-              <Mapping SourceColumn="Surname" DataSetColumn="Фамилия" />
-              <Mapping SourceColumn="Name" DataSetColumn="Имя" />
-              <Mapping SourceColumn="Patronymic" DataSetColumn="Отчество" />
-              <Mapping SourceColumn="Email" DataSetColumn="Почта" />
-              <Mapping SourceColumn="Name_discipline" DataSetColumn="Название дисциплины" />
-            </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.Mark_V" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT id_mark, Mark, Date_mark, Name_group, Surname, Name, Patronymic, Email, Name_discipline FROM dbo.Mark_V WHERE Email = @Email</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="Email" ColumnName="Email" DataSourceName="Journal_app.dbo.Mark_V" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Email" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.Mark_V" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT id_mark, Mark, Date_mark, Name_group, Surname, Name, Patronymic, Email, Name_discipline FROM dbo.Mark_V WHERE Name_discipline =@Name_discipline AND Email = @Email</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="Name_discipline" ColumnName="Name_discipline" DataSourceName="Journal_app.dbo.Mark_V" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@Name_discipline" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="Name_discipline" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="Email" ColumnName="Email" DataSourceName="Journal_app.dbo.Mark_V" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Email" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.Mark_V" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillBy2" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy2">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT id_mark, Mark, Date_mark, Name_group, Surname, Name, Patronymic, Email, Name_discipline FROM dbo.Mark_V WHERE Name_group=@Name_group</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="Name_group" ColumnName="Name_group" DataSourceName="Journal_app.dbo.Mark_V" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@Name_group" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="Name_group" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="users1TableAdapter" GeneratorDataComponentClassName="users1TableAdapter" Name="users1" UserDataComponentName="users1TableAdapter">
             <MainSource>
@@ -1033,6 +987,52 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Mark_VTableAdapter" GeneratorDataComponentClassName="Mark_VTableAdapter" Name="Mark_V" UserDataComponentName="Mark_VTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.Mark_V" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id_mark, Mark, Date_mark, Email, Surname, Name, Patronymic, Name_discipline FROM dbo.Mark_V</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_mark" DataSetColumn="id_mark" />
+              <Mapping SourceColumn="Mark" DataSetColumn="Оценка" />
+              <Mapping SourceColumn="Date_mark" DataSetColumn="Дата оценки" />
+              <Mapping SourceColumn="Email" DataSetColumn="Почта" />
+              <Mapping SourceColumn="Surname" DataSetColumn="Фамилия" />
+              <Mapping SourceColumn="Name" DataSetColumn="Имя" />
+              <Mapping SourceColumn="Patronymic" DataSetColumn="Отчество" />
+              <Mapping SourceColumn="Name_discipline" DataSetColumn="Название дисциплины" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.Mark_V" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT id_mark, Mark, Date_mark, Email, Surname, Name, Patronymic, Name_discipline FROM dbo.Mark_V WHERE Email = @Email
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Email" ColumnName="Email" DataSourceName="Journal_app.dbo.Mark_V" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Email" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="Journal_appConnectionString (Settings)" DbObjectName="Journal_app.dbo.Mark_V" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT id_mark, Mark, Date_mark, Email, Surname, Name, Patronymic, Name_discipline FROM dbo.Mark_V WHERE Name_discipline =@Name_discipline AND Email = @Email</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Name_discipline" ColumnName="Name_discipline" DataSourceName="Journal_app.dbo.Mark_V" DataTypeServer="varchar(100)" DbType="AnsiString" Direction="Input" ParameterName="@Name_discipline" Precision="0" ProviderType="VarChar" Scale="0" Size="100" SourceColumn="Name_discipline" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Email" ColumnName="Email" DataSourceName="Journal_app.dbo.Mark_V" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Email" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1041,7 +1041,7 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
   <xs:element name="Journal" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Journal" msprop:Generator_UserDSName="Journal">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="discipline" msprop:Generator_TableClassName="disciplineDataTable" msprop:Generator_TableVarName="tablediscipline" msprop:Generator_RowChangedName="disciplineRowChanged" msprop:Generator_TablePropName="discipline" msprop:Generator_RowDeletingName="disciplineRowDeleting" msprop:Generator_RowChangingName="disciplineRowChanging" msprop:Generator_RowEvHandlerName="disciplineRowChangeEventHandler" msprop:Generator_RowDeletedName="disciplineRowDeleted" msprop:Generator_RowClassName="disciplineRow" msprop:Generator_UserTableName="discipline" msprop:Generator_RowEvArgName="disciplineRowChangeEvent">
+        <xs:element name="discipline" msprop:Generator_TableClassName="disciplineDataTable" msprop:Generator_TableVarName="tablediscipline" msprop:Generator_TablePropName="discipline" msprop:Generator_RowDeletingName="disciplineRowDeleting" msprop:Generator_RowChangingName="disciplineRowChanging" msprop:Generator_RowEvHandlerName="disciplineRowChangeEventHandler" msprop:Generator_RowDeletedName="disciplineRowDeleted" msprop:Generator_UserTableName="discipline" msprop:Generator_RowChangedName="disciplineRowChanged" msprop:Generator_RowEvArgName="disciplineRowChangeEvent" msprop:Generator_RowClassName="disciplineRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_discipline" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_discipline" msprop:Generator_ColumnPropNameInRow="id_discipline" msprop:Generator_ColumnPropNameInTable="id_disciplineColumn" msprop:Generator_UserColumnName="id_discipline" type="xs:int" />
@@ -1057,7 +1057,7 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="group" msprop:Generator_TableClassName="groupDataTable" msprop:Generator_TableVarName="tablegroup" msprop:Generator_RowChangedName="groupRowChanged" msprop:Generator_TablePropName="group" msprop:Generator_RowDeletingName="groupRowDeleting" msprop:Generator_RowChangingName="groupRowChanging" msprop:Generator_RowEvHandlerName="groupRowChangeEventHandler" msprop:Generator_RowDeletedName="groupRowDeleted" msprop:Generator_RowClassName="groupRow" msprop:Generator_UserTableName="group" msprop:Generator_RowEvArgName="groupRowChangeEvent">
+        <xs:element name="group" msprop:Generator_TableClassName="groupDataTable" msprop:Generator_TableVarName="tablegroup" msprop:Generator_TablePropName="group" msprop:Generator_RowDeletingName="groupRowDeleting" msprop:Generator_RowChangingName="groupRowChanging" msprop:Generator_RowEvHandlerName="groupRowChangeEventHandler" msprop:Generator_RowDeletedName="groupRowDeleted" msprop:Generator_UserTableName="group" msprop:Generator_RowChangedName="groupRowChanged" msprop:Generator_RowEvArgName="groupRowChangeEvent" msprop:Generator_RowClassName="groupRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_group" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_group" msprop:Generator_ColumnPropNameInRow="id_group" msprop:Generator_ColumnPropNameInTable="id_groupColumn" msprop:Generator_UserColumnName="id_group" type="xs:int" />
@@ -1085,7 +1085,7 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="mark" msprop:Generator_TableClassName="markDataTable" msprop:Generator_TableVarName="tablemark" msprop:Generator_RowChangedName="markRowChanged" msprop:Generator_TablePropName="mark" msprop:Generator_RowDeletingName="markRowDeleting" msprop:Generator_RowChangingName="markRowChanging" msprop:Generator_RowEvHandlerName="markRowChangeEventHandler" msprop:Generator_RowDeletedName="markRowDeleted" msprop:Generator_RowClassName="markRow" msprop:Generator_UserTableName="mark" msprop:Generator_RowEvArgName="markRowChangeEvent">
+        <xs:element name="mark" msprop:Generator_TableClassName="markDataTable" msprop:Generator_TableVarName="tablemark" msprop:Generator_TablePropName="mark" msprop:Generator_RowDeletingName="markRowDeleting" msprop:Generator_RowChangingName="markRowChanging" msprop:Generator_RowEvHandlerName="markRowChangeEventHandler" msprop:Generator_RowDeletedName="markRowDeleted" msprop:Generator_UserTableName="mark" msprop:Generator_RowChangedName="markRowChanged" msprop:Generator_RowEvArgName="markRowChangeEvent" msprop:Generator_RowClassName="markRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_mark" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_mark" msprop:Generator_ColumnPropNameInRow="id_mark" msprop:Generator_ColumnPropNameInTable="id_markColumn" msprop:Generator_UserColumnName="id_mark" type="xs:int" />
@@ -1108,7 +1108,7 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_RowClassName="usersRow" msprop:Generator_UserTableName="users" msprop:Generator_RowEvArgName="usersRowChangeEvent">
+        <xs:element name="users" msprop:Generator_TableClassName="usersDataTable" msprop:Generator_TableVarName="tableusers" msprop:Generator_TablePropName="users" msprop:Generator_RowDeletingName="usersRowDeleting" msprop:Generator_RowChangingName="usersRowChanging" msprop:Generator_RowEvHandlerName="usersRowChangeEventHandler" msprop:Generator_RowDeletedName="usersRowDeleted" msprop:Generator_UserTableName="users" msprop:Generator_RowChangedName="usersRowChanged" msprop:Generator_RowEvArgName="usersRowChangeEvent" msprop:Generator_RowClassName="usersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_user" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_user" msprop:Generator_ColumnPropNameInRow="id_user" msprop:Generator_ColumnPropNameInTable="id_userColumn" msprop:Generator_UserColumnName="id_user" type="xs:int" />
@@ -1158,7 +1158,7 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Discipline_V" msprop:Generator_TableClassName="Discipline_VDataTable" msprop:Generator_TableVarName="tableDiscipline_V" msprop:Generator_RowChangedName="Discipline_VRowChanged" msprop:Generator_TablePropName="Discipline_V" msprop:Generator_RowDeletingName="Discipline_VRowDeleting" msprop:Generator_RowChangingName="Discipline_VRowChanging" msprop:Generator_RowEvHandlerName="Discipline_VRowChangeEventHandler" msprop:Generator_RowDeletedName="Discipline_VRowDeleted" msprop:Generator_RowClassName="Discipline_VRow" msprop:Generator_UserTableName="Discipline_V" msprop:Generator_RowEvArgName="Discipline_VRowChangeEvent">
+        <xs:element name="Discipline_V" msprop:Generator_TableClassName="Discipline_VDataTable" msprop:Generator_TableVarName="tableDiscipline_V" msprop:Generator_TablePropName="Discipline_V" msprop:Generator_RowDeletingName="Discipline_VRowDeleting" msprop:Generator_RowChangingName="Discipline_VRowChanging" msprop:Generator_RowEvHandlerName="Discipline_VRowChangeEventHandler" msprop:Generator_RowDeletedName="Discipline_VRowDeleted" msprop:Generator_UserTableName="Discipline_V" msprop:Generator_RowChangedName="Discipline_VRowChanged" msprop:Generator_RowEvArgName="Discipline_VRowChangeEvent" msprop:Generator_RowClassName="Discipline_VRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_discipline" msprop:Generator_ColumnVarNameInTable="columnid_discipline" msprop:Generator_ColumnPropNameInRow="id_discipline" msprop:Generator_ColumnPropNameInTable="id_disciplineColumn" msprop:Generator_UserColumnName="id_discipline" type="xs:int" />
@@ -1207,70 +1207,7 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Mark_V" msprop:Generator_TableClassName="Mark_VDataTable" msprop:Generator_TableVarName="tableMark_V" msprop:Generator_RowChangedName="Mark_VRowChanged" msprop:Generator_TablePropName="Mark_V" msprop:Generator_RowDeletingName="Mark_VRowDeleting" msprop:Generator_RowChangingName="Mark_VRowChanging" msprop:Generator_RowEvHandlerName="Mark_VRowChangeEventHandler" msprop:Generator_RowDeletedName="Mark_VRowDeleted" msprop:Generator_RowClassName="Mark_VRow" msprop:Generator_UserTableName="Mark_V" msprop:Generator_RowEvArgName="Mark_VRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="id_mark" msprop:Generator_ColumnVarNameInTable="columnid_mark" msprop:Generator_ColumnPropNameInRow="id_mark" msprop:Generator_ColumnPropNameInTable="id_markColumn" msprop:Generator_UserColumnName="id_mark" type="xs:int" />
-              <xs:element name="Оценка" msdata:Caption="Mark" msprop:Generator_ColumnVarNameInTable="columnОценка" msprop:Generator_ColumnPropNameInRow="Оценка" msprop:Generator_ColumnPropNameInTable="ОценкаColumn" msprop:Generator_UserColumnName="Оценка">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Дата_x0020_оценки" msdata:Caption="Date_mark" msprop:Generator_ColumnVarNameInTable="columnДата_оценки" msprop:Generator_ColumnPropNameInRow="Дата_оценки" msprop:Generator_ColumnPropNameInTable="Дата_оценкиColumn" msprop:Generator_UserColumnName="Дата оценки">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="20" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Наименование_x0020_группы" msdata:Caption="Name_group" msprop:Generator_ColumnVarNameInTable="columnНаименование_группы" msprop:Generator_ColumnPropNameInRow="Наименование_группы" msprop:Generator_ColumnPropNameInTable="Наименование_группыColumn" msprop:Generator_UserColumnName="Наименование группы" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Фамилия" msdata:Caption="Surname" msprop:Generator_ColumnVarNameInTable="columnФамилия" msprop:Generator_ColumnPropNameInRow="Фамилия" msprop:Generator_ColumnPropNameInTable="ФамилияColumn" msprop:Generator_UserColumnName="Фамилия">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Имя" msdata:Caption="Name" msprop:Generator_ColumnVarNameInTable="columnИмя" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_UserColumnName="Имя">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Отчество" msdata:Caption="Patronymic" msprop:Generator_ColumnVarNameInTable="columnОтчество" msprop:Generator_ColumnPropNameInRow="Отчество" msprop:Generator_ColumnPropNameInTable="ОтчествоColumn" msprop:Generator_UserColumnName="Отчество" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Почта" msdata:Caption="Email" msprop:Generator_ColumnVarNameInTable="columnПочта" msprop:Generator_ColumnPropNameInRow="Почта" msprop:Generator_ColumnPropNameInTable="ПочтаColumn" msprop:Generator_UserColumnName="Почта">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Название_x0020_дисциплины" msdata:Caption="Name_discipline" msprop:Generator_ColumnVarNameInTable="columnНазвание_дисциплины" msprop:Generator_ColumnPropNameInRow="Название_дисциплины" msprop:Generator_ColumnPropNameInTable="Название_дисциплиныColumn" msprop:Generator_UserColumnName="Название дисциплины">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="users1" msprop:Generator_TableClassName="users1DataTable" msprop:Generator_TableVarName="tableusers1" msprop:Generator_TablePropName="users1" msprop:Generator_RowDeletingName="users1RowDeleting" msprop:Generator_RowChangingName="users1RowChanging" msprop:Generator_RowEvHandlerName="users1RowChangeEventHandler" msprop:Generator_RowDeletedName="users1RowDeleted" msprop:Generator_UserTableName="users1" msprop:Generator_RowChangedName="users1RowChanged" msprop:Generator_RowEvArgName="users1RowChangeEvent" msprop:Generator_RowClassName="users1Row">
+        <xs:element name="users1" msprop:Generator_TableClassName="users1DataTable" msprop:Generator_TableVarName="tableusers1" msprop:Generator_RowChangedName="users1RowChanged" msprop:Generator_TablePropName="users1" msprop:Generator_RowDeletingName="users1RowDeleting" msprop:Generator_RowChangingName="users1RowChanging" msprop:Generator_RowEvHandlerName="users1RowChangeEventHandler" msprop:Generator_RowDeletedName="users1RowDeleted" msprop:Generator_RowClassName="users1Row" msprop:Generator_UserTableName="users1" msprop:Generator_RowEvArgName="users1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_user" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_user" msprop:Generator_ColumnPropNameInRow="id_user" msprop:Generator_ColumnPropNameInTable="id_userColumn" msprop:Generator_UserColumnName="id_user" type="xs:int" />
@@ -1320,7 +1257,7 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="group1" msprop:Generator_TableClassName="group1DataTable" msprop:Generator_TableVarName="tablegroup1" msprop:Generator_TablePropName="group1" msprop:Generator_RowDeletingName="group1RowDeleting" msprop:Generator_RowChangingName="group1RowChanging" msprop:Generator_RowEvHandlerName="group1RowChangeEventHandler" msprop:Generator_RowDeletedName="group1RowDeleted" msprop:Generator_UserTableName="group1" msprop:Generator_RowChangedName="group1RowChanged" msprop:Generator_RowEvArgName="group1RowChangeEvent" msprop:Generator_RowClassName="group1Row">
+        <xs:element name="group1" msprop:Generator_TableClassName="group1DataTable" msprop:Generator_TableVarName="tablegroup1" msprop:Generator_RowChangedName="group1RowChanged" msprop:Generator_TablePropName="group1" msprop:Generator_RowDeletingName="group1RowDeleting" msprop:Generator_RowChangingName="group1RowChanging" msprop:Generator_RowEvHandlerName="group1RowChangeEventHandler" msprop:Generator_RowDeletedName="group1RowDeleted" msprop:Generator_RowClassName="group1Row" msprop:Generator_UserTableName="group1" msprop:Generator_RowEvArgName="group1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_group" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_group" msprop:Generator_ColumnPropNameInRow="id_group" msprop:Generator_ColumnPropNameInTable="id_groupColumn" msprop:Generator_UserColumnName="id_group" type="xs:int" />
@@ -1339,6 +1276,62 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Branch_name" msprop:Generator_ColumnVarNameInTable="columnBranch_name" msprop:Generator_ColumnPropNameInRow="Branch_name" msprop:Generator_ColumnPropNameInTable="Branch_nameColumn" msprop:Generator_UserColumnName="Branch_name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Mark_V" msprop:Generator_TableClassName="Mark_VDataTable" msprop:Generator_TableVarName="tableMark_V" msprop:Generator_TablePropName="Mark_V" msprop:Generator_RowDeletingName="Mark_VRowDeleting" msprop:Generator_RowChangingName="Mark_VRowChanging" msprop:Generator_RowEvHandlerName="Mark_VRowChangeEventHandler" msprop:Generator_RowDeletedName="Mark_VRowDeleted" msprop:Generator_UserTableName="Mark_V" msprop:Generator_RowChangedName="Mark_VRowChanged" msprop:Generator_RowEvArgName="Mark_VRowChangeEvent" msprop:Generator_RowClassName="Mark_VRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_mark" msprop:Generator_ColumnVarNameInTable="columnid_mark" msprop:Generator_ColumnPropNameInRow="id_mark" msprop:Generator_ColumnPropNameInTable="id_markColumn" msprop:Generator_UserColumnName="id_mark" type="xs:int" />
+              <xs:element name="Оценка" msdata:Caption="Mark" msprop:Generator_ColumnVarNameInTable="columnОценка" msprop:Generator_ColumnPropNameInRow="Оценка" msprop:Generator_ColumnPropNameInTable="ОценкаColumn" msprop:Generator_UserColumnName="Оценка">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Дата_x0020_оценки" msdata:Caption="Date_mark" msprop:Generator_ColumnVarNameInTable="columnДата_оценки" msprop:Generator_ColumnPropNameInRow="Дата_оценки" msprop:Generator_ColumnPropNameInTable="Дата_оценкиColumn" msprop:Generator_UserColumnName="Дата оценки">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Почта" msdata:Caption="Email" msprop:Generator_ColumnVarNameInTable="columnПочта" msprop:Generator_ColumnPropNameInRow="Почта" msprop:Generator_ColumnPropNameInTable="ПочтаColumn" msprop:Generator_UserColumnName="Почта">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Фамилия" msdata:Caption="Surname" msprop:Generator_ColumnVarNameInTable="columnФамилия" msprop:Generator_ColumnPropNameInRow="Фамилия" msprop:Generator_ColumnPropNameInTable="ФамилияColumn" msprop:Generator_UserColumnName="Фамилия">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Имя" msdata:Caption="Name" msprop:Generator_ColumnVarNameInTable="columnИмя" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_UserColumnName="Имя">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Отчество" msdata:Caption="Patronymic" msprop:Generator_ColumnVarNameInTable="columnОтчество" msprop:Generator_ColumnPropNameInRow="Отчество" msprop:Generator_ColumnPropNameInTable="ОтчествоColumn" msprop:Generator_UserColumnName="Отчество" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Название_x0020_дисциплины" msdata:Caption="Name_discipline" msprop:Generator_ColumnVarNameInTable="columnНазвание_дисциплины" msprop:Generator_ColumnPropNameInRow="Название_дисциплины" msprop:Generator_ColumnPropNameInTable="Название_дисциплиныColumn" msprop:Generator_UserColumnName="Название дисциплины">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -1370,10 +1363,6 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
       <xs:selector xpath=".//mstns:Discipline_V" />
       <xs:field xpath="mstns:id_discipline" />
     </xs:unique>
-    <xs:unique name="Mark_V_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Mark_V" />
-      <xs:field xpath="mstns:id_mark" />
-    </xs:unique>
     <xs:unique name="users1_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:users1" />
       <xs:field xpath="mstns:id_user" />
@@ -1382,14 +1371,18 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
       <xs:selector xpath=".//mstns:group1" />
       <xs:field xpath="mstns:id_group" />
     </xs:unique>
+    <xs:unique name="Mark_V_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Mark_V" />
+      <xs:field xpath="mstns:id_mark" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__disciplin__id_gr__619B8048" msdata:parent="group" msdata:child="discipline" msdata:parentkey="id_group" msdata:childkey="id_group" msprop:Generator_UserChildTable="discipline" msprop:Generator_ChildPropName="GetdisciplineRows" msprop:Generator_UserRelationName="FK__disciplin__id_gr__619B8048" msprop:Generator_ParentPropName="groupRow" msprop:Generator_RelationVarName="relationFK__disciplin__id_gr__619B8048" msprop:Generator_UserParentTable="group" />
-      <msdata:Relationship name="FK__disciplin__id_te__628FA481" msdata:parent="users" msdata:child="discipline" msdata:parentkey="id_user" msdata:childkey="id_teacher" msprop:Generator_UserChildTable="discipline" msprop:Generator_ChildPropName="GetdisciplineRows" msprop:Generator_UserRelationName="FK__disciplin__id_te__628FA481" msprop:Generator_ParentPropName="usersRow" msprop:Generator_RelationVarName="relationFK__disciplin__id_te__628FA481" msprop:Generator_UserParentTable="users" />
-      <msdata:Relationship name="FK__mark__id_discipl__656C112C" msdata:parent="discipline" msdata:child="mark" msdata:parentkey="id_discipline" msdata:childkey="id_discipline" msprop:Generator_UserChildTable="mark" msprop:Generator_ChildPropName="GetmarkRows" msprop:Generator_UserRelationName="FK__mark__id_discipl__656C112C" msprop:Generator_RelationVarName="relationFK__mark__id_discipl__656C112C" msprop:Generator_UserParentTable="discipline" msprop:Generator_ParentPropName="disciplineRow" />
-      <msdata:Relationship name="FK__mark__id_student__66603565" msdata:parent="users" msdata:child="mark" msdata:parentkey="id_user" msdata:childkey="id_student" msprop:Generator_UserChildTable="mark" msprop:Generator_ChildPropName="GetmarkRows" msprop:Generator_UserRelationName="FK__mark__id_student__66603565" msprop:Generator_ParentPropName="usersRow" msprop:Generator_RelationVarName="relationFK__mark__id_student__66603565" msprop:Generator_UserParentTable="users" />
-      <msdata:Relationship name="FK__users__id_group__5EBF139D" msdata:parent="group" msdata:child="users" msdata:parentkey="id_group" msdata:childkey="id_group" msprop:Generator_UserChildTable="users" msprop:Generator_ChildPropName="GetusersRows" msprop:Generator_UserRelationName="FK__users__id_group__5EBF139D" msprop:Generator_RelationVarName="relationFK__users__id_group__5EBF139D" msprop:Generator_UserParentTable="group" msprop:Generator_ParentPropName="groupRow" />
+      <msdata:Relationship name="FK__disciplin__id_gr__619B8048" msdata:parent="group" msdata:child="discipline" msdata:parentkey="id_group" msdata:childkey="id_group" msprop:Generator_UserChildTable="discipline" msprop:Generator_ChildPropName="GetdisciplineRows" msprop:Generator_UserRelationName="FK__disciplin__id_gr__619B8048" msprop:Generator_RelationVarName="relationFK__disciplin__id_gr__619B8048" msprop:Generator_UserParentTable="group" msprop:Generator_ParentPropName="groupRow" />
+      <msdata:Relationship name="FK__disciplin__id_te__628FA481" msdata:parent="users" msdata:child="discipline" msdata:parentkey="id_user" msdata:childkey="id_teacher" msprop:Generator_UserChildTable="discipline" msprop:Generator_ChildPropName="GetdisciplineRows" msprop:Generator_UserRelationName="FK__disciplin__id_te__628FA481" msprop:Generator_RelationVarName="relationFK__disciplin__id_te__628FA481" msprop:Generator_UserParentTable="users" msprop:Generator_ParentPropName="usersRow" />
+      <msdata:Relationship name="FK__mark__id_discipl__656C112C" msdata:parent="discipline" msdata:child="mark" msdata:parentkey="id_discipline" msdata:childkey="id_discipline" msprop:Generator_UserChildTable="mark" msprop:Generator_ChildPropName="GetmarkRows" msprop:Generator_UserRelationName="FK__mark__id_discipl__656C112C" msprop:Generator_ParentPropName="disciplineRow" msprop:Generator_RelationVarName="relationFK__mark__id_discipl__656C112C" msprop:Generator_UserParentTable="discipline" />
+      <msdata:Relationship name="FK__mark__id_student__66603565" msdata:parent="users" msdata:child="mark" msdata:parentkey="id_user" msdata:childkey="id_student" msprop:Generator_UserChildTable="mark" msprop:Generator_ChildPropName="GetmarkRows" msprop:Generator_UserRelationName="FK__mark__id_student__66603565" msprop:Generator_RelationVarName="relationFK__mark__id_student__66603565" msprop:Generator_UserParentTable="users" msprop:Generator_ParentPropName="usersRow" />
+      <msdata:Relationship name="FK__users__id_group__5EBF139D" msdata:parent="group" msdata:child="users" msdata:parentkey="id_group" msdata:childkey="id_group" msprop:Generator_UserChildTable="users" msprop:Generator_ChildPropName="GetusersRows" msprop:Generator_UserRelationName="FK__users__id_group__5EBF139D" msprop:Generator_ParentPropName="groupRow" msprop:Generator_RelationVarName="relationFK__users__id_group__5EBF139D" msprop:Generator_UserParentTable="group" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

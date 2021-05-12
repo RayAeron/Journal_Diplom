@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -35,6 +37,20 @@ namespace Journal_Diplom
         public Admin()
         {
             InitializeComponent();
+
+            WebClient client = new WebClient();
+            try
+            {
+                using (client.OpenRead("http://www.google.com"))
+                {
+                }
+            }
+            catch (WebException)
+            {
+                MessageBox.Show("Проверьте подлючение к интернету");
+                this.Close();
+                Process.GetCurrentProcess().Kill();
+            }
 
             frame.Navigate(new Discipline_Frame());
 
@@ -112,7 +128,7 @@ namespace Journal_Diplom
                     group_iner = grop_id;
                 }
             }
-            Mark_VTableAdapter.FillBy2(Journal.Mark_V, group_search.Text);
+            //Mark_VTableAdapter.FillBy2(Journal.Mark_V, group_search.Text);
 
             mark_student.Items.Clear();
             mark_d.Items.Clear();
@@ -388,12 +404,19 @@ namespace Journal_Diplom
             try
             {
                 DataRowView selectedatarow = (DataRowView)group_grid.SelectedItem;
+                for (int i = 0; i < Journal.users.Rows.Count; i++)
+                {
+                    string users_del = Journal.users.Rows[i].ItemArray[7].ToString();
+                    usersTableAdapter.DeleteQuery1(Convert.ToInt32(selectedatarow.Row.ItemArray[0]));
+                    Mark_VTableAdapter.Fill(Journal.Mark_V);
+                    users1TableAdapter.Fill(Journal.users1);
+                }
                 groupTableAdapter.DeleteQuery(Convert.ToInt32(selectedatarow.Row.ItemArray[0]));
                 groupTableAdapter.Fill(Journal.group);
             }
             catch
             {
-                MessageBox.Show("Нельзя удалить так, как к этой группе уже привязанны студенты!!!");
+                MessageBox.Show("Ошибка!!!");
             }
         }
 
@@ -405,8 +428,8 @@ namespace Journal_Diplom
                 id_mrk_lbl.Content = selecteDataRow.Row.ItemArray[0].ToString();
                 mark_select.Text = selecteDataRow.Row.ItemArray[1].ToString();
                 date_picker.Text = selecteDataRow.Row.ItemArray[2].ToString();
-                mark_student.Text = selecteDataRow.Row.ItemArray[7].ToString();
-                mark_d.Text = selecteDataRow.Row.ItemArray[8].ToString();
+                mark_student.Text = selecteDataRow.Row.ItemArray[3].ToString();
+                mark_d.Text = selecteDataRow.Row.ItemArray[7].ToString();
             }
         }
 
@@ -490,8 +513,9 @@ namespace Journal_Diplom
                 DataRowView selectedatarow = (DataRowView)permiss_grid.SelectedItem;
                 for (int i = 0; i < Journal.mark.Rows.Count; i++)
                 {
-                    string mark_del = Journal.discipline.Rows[i].ItemArray[4].ToString();
+                    string mark_del = Journal.mark.Rows[i].ItemArray[4].ToString();
                     markTableAdapter.DeleteQuery1(Convert.ToInt32(selectedatarow.Row.ItemArray[0]));
+                    Mark_VTableAdapter.Fill(Journal.Mark_V);
                 }
                 usersTableAdapter.DeleteQuery(Convert.ToInt32(selectedatarow.Row.ItemArray[0]));
                 users1TableAdapter.Fill(Journal.users1);
@@ -501,8 +525,8 @@ namespace Journal_Diplom
             }
             catch
             {
-                MessageBox.Show("Нельзя удалить так, как у этого студента есть оценка!!!");
+                MessageBox.Show("Повторите попытку позже!!!");
             }
-}
+        }
     }
 }

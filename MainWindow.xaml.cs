@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
@@ -16,6 +17,8 @@ namespace Journal_Diplom
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        
+
         Journal Journal;
         usersTableAdapter usersTableAdapter;
         groupTableAdapter groupTableAdapter;
@@ -24,6 +27,20 @@ namespace Journal_Diplom
         public MainWindow()
         {
             InitializeComponent();
+
+            WebClient client = new WebClient();
+            try
+            {
+                using (client.OpenRead("http://www.google.com"))
+                {
+                }
+            }
+            catch (WebException)
+            {
+                MessageBox.Show("Проверьте подлючение к интернету");
+                this.Close();
+                Process.GetCurrentProcess().Kill();
+            }
 
             Title = "Авторизация";
             Journal = new Journal();
@@ -47,7 +64,10 @@ namespace Journal_Diplom
             name.MaxLength = 50;
             patronymic.MaxLength = 50;
 
+
         }
+
+
         private void pass_recovery_MouseUp(object sender, MouseButtonEventArgs e)
         {
             reck_pass reck_pass = new reck_pass();

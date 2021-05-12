@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Configuration;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -28,6 +29,20 @@ namespace Journal_Diplom
         public Student()
         {
             InitializeComponent();
+
+            WebClient client = new WebClient();
+            try
+            {
+                using (client.OpenRead("http://www.google.com"))
+                {
+                }
+            }
+            catch (WebException)
+            {
+                MessageBox.Show("Проверьте подлючение к интернету");
+                this.Close();
+                Process.GetCurrentProcess().Kill();
+            }
 
             Journal = new Journal();
             usersTableAdapter = new usersTableAdapter();
