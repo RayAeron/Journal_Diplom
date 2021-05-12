@@ -143,14 +143,20 @@ namespace Journal_Diplom
                 person_Focus(main_canv, person_canv);
                 Title = "Личный кабинет";
                 trysi = Convert.ToString(login.Content);
-
-                usersTableAdapter.FillBy(Journal.users, Convert.ToString(login.Content));
-                if (!Journal.users.Rows.Count.Equals(0))
+                try
                 {
-                    surname_s.Content = Journal.users.Rows[0].ItemArray[1].ToString();
-                    name_s.Content = Journal.users.Rows[0].ItemArray[2].ToString();
-                    patronymic_s.Content = Journal.users.Rows[0].ItemArray[3].ToString();
+                    usersTableAdapter.FillBy(Journal.users, Convert.ToString(login.Content));
+                    if (!Journal.users.Rows.Count.Equals(0))
+                    {
+                        surname_s.Content = Journal.users.Rows[0].ItemArray[1].ToString();
+                        name_s.Content = Journal.users.Rows[0].ItemArray[2].ToString();
+                        patronymic_s.Content = Journal.users.Rows[0].ItemArray[3].ToString();
 
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Проверьте соединение с интернетом");
                 }
             }
             if (((Button)sender).Content.Equals("Назад"))
@@ -163,9 +169,16 @@ namespace Journal_Diplom
         {
             if (surname_t.Text != "")
             {
-                usersTableAdapter.UpdateQuery1(surname_t.Text, trysi);
-                surname_s.Content = surname_t.Text;
-                surname_t.Text = null;
+                try
+                {
+                    usersTableAdapter.UpdateQuery1(surname_t.Text, trysi);
+                    surname_s.Content = surname_t.Text;
+                    surname_t.Text = null;
+                }
+                catch
+                {
+                    MessageBox.Show("Проверьте соединение с интернетом");
+                }
             }
             else MessageBox.Show("Введите данные");
         }
@@ -174,9 +187,16 @@ namespace Journal_Diplom
         {
             if (name_t.Text != "")
             {
-                usersTableAdapter.UpdateQuery2(name_t.Text, trysi);
-                name_s.Content = name_t.Text;
-                name_t.Text = null;
+                try
+                {
+                    usersTableAdapter.UpdateQuery2(name_t.Text, trysi);
+                    name_s.Content = name_t.Text;
+                    name_t.Text = null;
+                }
+                catch
+                {
+                    MessageBox.Show("Проверьте соединение с интернетом");
+                }
             }
             else MessageBox.Show("Введите данные");
         }
@@ -185,9 +205,16 @@ namespace Journal_Diplom
         {
             if (patronymic_t.Text != "")
             {
-                usersTableAdapter.UpdateQuery3(patronymic_t.Text, trysi);
-                patronymic_s.Content = patronymic_t.Text;
-                patronymic_t.Text = null;
+                try
+                {
+                    usersTableAdapter.UpdateQuery3(patronymic_t.Text, trysi);
+                    patronymic_s.Content = patronymic_t.Text;
+                    patronymic_t.Text = null;
+                }
+                catch
+                {
+                    MessageBox.Show("Проверьте соединение с интернетом");
+                }
             }
             else MessageBox.Show("Введите данные");
         }
@@ -232,7 +259,7 @@ namespace Journal_Diplom
             }
             catch
             {
-
+                MessageBox.Show("Проверьте соединение с интернетом");
             }
         }
 
@@ -243,56 +270,64 @@ namespace Journal_Diplom
 
         private void search_btn_Click(object sender, RoutedEventArgs e)
         {
-            Mark_VTableAdapter.FillBy(Journal.Mark_V, searh.Text);
+            try
+            {
+                Mark_VTableAdapter.FillBy(Journal.Mark_V, searh.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Проверьте соединение с интернетом");
+            }
         }
 
         private void group_btn_Click(object sender, RoutedEventArgs e)
         {
-            string group_iner = "";
-            groupTableAdapter.FillBy(Journal.group, group_search.Text);
-            if (!Journal.group.Rows.Count.Equals(0))
+            try
             {
-                for (int i = 0; i < Journal.group.Rows.Count; i++)
+                string group_iner = "";
+                groupTableAdapter.FillBy(Journal.group, group_search.Text);
+                if (!Journal.group.Rows.Count.Equals(0))
                 {
-                    string grop_id = Convert.ToString(Journal.group.Rows[i]["id_group"]);
-                    group_iner = grop_id;
+                    for (int i = 0; i < Journal.group.Rows.Count; i++)
+                    {
+                        string grop_id = Convert.ToString(Journal.group.Rows[i]["id_group"]);
+                        group_iner = grop_id;
+                    }
                 }
-            }
-            //Mark_VTableAdapter.FillBy2(Journal.Mark_V, group_search.Text);
 
-            mark_student.Items.Clear();
-            mark_d.Items.Clear();
-            try
-            {
-                //for (int i = 0; i < Journal.Mark_V.Rows.Count; i++)
-                //{
-                //    if (!(mark_student.Items.Contains(Journal.Mark_V.Rows[i]["Почта"])))
-                //    {
-                //        mark_student.Items.Add(Journal.Mark_V.Rows[i]["Почта"]);
-                //    }
-                //}
-                usersTableAdapter.FillBy3(Journal.users, int.Parse(group_iner));
-                for (int i = 0; i < Journal.users.Rows.Count; i++)
+                mark_student.Items.Clear();
+                mark_d.Items.Clear();
+                try
                 {
-                    mark_student.Items.Add(Journal.users.Rows[i]["Email"]);
+                    usersTableAdapter.FillBy3(Journal.users, int.Parse(group_iner));
+                    for (int i = 0; i < Journal.users.Rows.Count; i++)
+                    {
+                        mark_student.Items.Add(Journal.users.Rows[i]["Email"]);
+                    }
                 }
+                catch
+                {
+                    MessageBox.Show("Выберите студента");
+                }
+                try
+                {
+                    disciplineTableAdapter.FillBy1(Journal.discipline, int.Parse(group_iner));
+                    for (int i = 0; i < Journal.discipline.Rows.Count; i++)
+                    {
+                        mark_d.Items.Add(Journal.discipline.Rows[i]["Name_discipline"]);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Выберите группу");
+                }
+
             }
             catch
             {
-                MessageBox.Show("Выберите студента");
-            }
-            try
-            {
-                disciplineTableAdapter.FillBy1(Journal.discipline, int.Parse(group_iner));
-                for (int i = 0; i < Journal.discipline.Rows.Count; i++)
-                {
-                    mark_d.Items.Add(Journal.discipline.Rows[i]["Name_discipline"]);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Выберите группу");
+                MessageBox.Show("Проверьте соединение с интернетом");
             }
         }
     }
 }
+

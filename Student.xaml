@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Панель студента" Height="475.05" Width="905.567" ResizeMode="CanMinimize" Background="#FF252525" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Canvas x:Name="main_canv" Visibility="Hidden" mah:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
+        <Canvas x:Name="main_canv" Visibility="Visible" mah:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
             <Label x:Name="login" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FF0767B3" FontWeight="Bold" FontSize="16"/>
             <Button x:Name="mark_view" Content="Просмотр оценок" Canvas.Left="10" BorderBrush="#FF0767B3" Background="{x:Null}" Canvas.Top="52" FontSize="16" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Width="430" Foreground="#FF0767B3" Height="384" Click="back_l"/>
             <Button x:Name="personal_cabinet" Content="Личный кабинет" BorderBrush="#FF0767B3" Background="{x:Null}" FontSize="16" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Width="416" Foreground="#FF0767B3" Canvas.Left="474" Canvas.Top="52" Height="377" Click="back_l"/>
@@ -25,7 +25,7 @@
             <Label Content="Поиск" Canvas.Left="410" Canvas.Top="31" Foreground="#FFE6EAFE" FontSize="14" FontWeight="Bold"/>
             <Button x:Name="search_btn" Content="Поиск" Canvas.Left="543" Canvas.Top="63" Width="75" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" Click="search_btn_Click"/>
         </Canvas>
-        <Canvas x:Name="person_canv" Visibility="Visible">
+        <Canvas x:Name="person_canv" Visibility="Hidden">
             <Button x:Name="back_person" Content="Назад" Canvas.Left="725" BorderBrush="#FF0767B3" Canvas.Top="404" FontSize="14" Width="165" Foreground="White" Height="32" Click="back_l" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3"/>
             <Label Content="Имя:" Canvas.Left="92" Canvas.Top="180" Foreground="#FF0767B3" Width="78" FontSize="14" FontWeight="Bold" Height="31"/>
             <Label Content="Фамилия:" Canvas.Left="92" Canvas.Top="144" Foreground="#FF0767B3" Width="78" FontSize="14" FontWeight="Bold" Height="31"/>

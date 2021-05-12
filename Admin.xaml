@@ -15,7 +15,7 @@
                     <ImageBrush ImageSource="log_out_icon_128821.png" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
-            <Canvas x:Name="canv_mark_add_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Visible">
+            <Canvas x:Name="canv_mark_add_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Hidden">
                 <TextBox x:Name="searh" Height="32" Canvas.Left="320" Canvas.Top="10" Width="178" BorderBrush="#FF0078D7" HorizontalContentAlignment="Center" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" Foreground="#FF0767B3"/>
                 <Button x:Name="search_btn" Content="Поиск по почте" Canvas.Left="508" Canvas.Top="10" Width="133" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" Click="search_btn_Click" FontSize="12"/>
                 <ComboBox x:Name="group_search" Canvas.Left="200" Canvas.Top="10" Width="120" Foreground="#FF0767B3" BorderBrush="#FF0767B3" Height="32"  HorizontalContentAlignment="Center" Visibility="Hidden"/>
@@ -41,7 +41,7 @@
                 <Label x:Name="id_mrk_lbl" Content="" Canvas.Left="898" Canvas.Top="412" Visibility="Hidden"/>
                 <Button x:Name="del_mark" Content="Удалить оценку" Canvas.Left="774" Canvas.Top="439" Width="151" BorderBrush="#FF0767B3" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" Click="del_mark_Click"/>
             </Canvas>
-            <Canvas x:Name="canv_group_add_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Hidden">
+            <Canvas x:Name="canv_group_add_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Visible">
                 <TextBox x:Name="group_name" Height="32" Canvas.Left="10" Canvas.Top="362" Width="178" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
                 <TextBox x:Name="code" Height="32" Canvas.Left="10" Canvas.Top="427" Width="178" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
                 <TextBox x:Name="name" Height="32" Canvas.Left="11" Canvas.Top="493" Width="446" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
