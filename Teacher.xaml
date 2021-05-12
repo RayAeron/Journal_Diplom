@@ -46,17 +46,17 @@
         <Canvas x:Name="person_canv" Visibility="Hidden">
             <Button x:Name="back_person" Content="Назад" Canvas.Left="725" BorderBrush="#FF0767B3" Canvas.Top="404" FontSize="14" Width="165" Foreground="White" Height="32" Click="back_l" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3"/>
             <Label Content="Имя:" Canvas.Left="86" Canvas.Top="181" Foreground="#FF0767B3" Width="78" FontSize="14" FontWeight="Bold" Height="31"/>
-            <Label Content="Фамилия:" Canvas.Left="86" Canvas.Top="145" Foreground="#FF0767B3" Width="78" FontSize="14" FontWeight="Bold" Height="31"/>
-            <Label Content="Отчество:" Canvas.Left="86" Canvas.Top="217" Foreground="#FF0767B3" Width="78" FontSize="14" FontWeight="Bold" Height="31"/>
+            <Label Content="Фамилия:" Canvas.Left="86" Canvas.Top="96" Foreground="#FF0767B3" Width="78" FontSize="14" FontWeight="Bold" Height="31"/>
+            <Label Content="Отчество:" Canvas.Left="86" Canvas.Top="267" Foreground="#FF0767B3" Width="78" FontSize="14" FontWeight="Bold" Height="31"/>
             <TextBox x:Name="name_t" Height="31" Canvas.Left="473"  Canvas.Top="181" Width="214" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
-            <TextBox x:Name="surname_t" Height="31" Canvas.Left="473"  Canvas.Top="145" Width="214" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
-            <TextBox x:Name="patronymic_t" Height="31" Canvas.Left="473"  Canvas.Top="217" Width="214" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
-            <Label x:Name="patronymic_s" Content="" Canvas.Left="169" Canvas.Top="217" Foreground="#FF0767B3" Width="299" FontSize="14" FontWeight="Bold" Height="31"/>
+            <TextBox x:Name="surname_t" Height="31" Canvas.Left="473"  Canvas.Top="96" Width="214" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
+            <TextBox x:Name="patronymic_t" Height="31" Canvas.Left="473"  Canvas.Top="267" Width="214" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
+            <Label x:Name="patronymic_s" Content="" Canvas.Left="169" Canvas.Top="267" Foreground="#FF0767B3" Width="299" FontSize="14" FontWeight="Bold" Height="31"/>
             <Label x:Name="name_s" Content="" Canvas.Left="169" Canvas.Top="181" Foreground="#FF0767B3" Width="299" FontSize="14" FontWeight="Bold" Height="31"/>
-            <Label x:Name="surname_s" Content="" Canvas.Left="169" Canvas.Top="145" Foreground="#FF0767B3" Width="299" FontSize="14" FontWeight="Bold" Height="31"/>
-            <Button x:Name="surname_b" Content="Изменить" Canvas.Left="725" Width="96" BorderBrush="{x:Null}" Background="#FF0767B3" Canvas.Top="145" Height="31" FontSize="12" mah:ControlsHelper.FocusBorderBrush="{x:Null}" Click="surname_b_Click"/>
+            <Label x:Name="surname_s" Content="" Canvas.Left="169" Canvas.Top="96" Foreground="#FF0767B3" Width="299" FontSize="14" FontWeight="Bold" Height="31"/>
+            <Button x:Name="surname_b" Content="Изменить" Canvas.Left="725" Width="96" BorderBrush="{x:Null}" Background="#FF0767B3" Canvas.Top="96" Height="31" FontSize="12" mah:ControlsHelper.FocusBorderBrush="{x:Null}" Click="surname_b_Click"/>
             <Button x:Name="name_b" Content="Изменить" Canvas.Left="725" Width="96" BorderBrush="{x:Null}" Background="#FF0767B3" Canvas.Top="181" Height="31" FontSize="12" mah:ControlsHelper.FocusBorderBrush="{x:Null}" Click="name_b_Click"/>
-            <Button x:Name="patronymic_b" Content="Изменить" Canvas.Left="725" Width="96" BorderBrush="{x:Null}" Background="#FF0767B3" Canvas.Top="217" Height="31" FontSize="12" mah:ControlsHelper.FocusBorderBrush="{x:Null}" Click="patronymic_b_Click"/>
+            <Button x:Name="patronymic_b" Content="Изменить" Canvas.Left="725" Width="96" BorderBrush="{x:Null}" Background="#FF0767B3" Canvas.Top="267" Height="31" FontSize="12" mah:ControlsHelper.FocusBorderBrush="{x:Null}" Click="patronymic_b_Click"/>
         </Canvas>
     </Grid>
 </mah:MetroWindow>

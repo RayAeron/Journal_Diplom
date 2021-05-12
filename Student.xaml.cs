@@ -54,6 +54,11 @@ namespace Journal_Diplom
             mark.CanUserDeleteRows = false;
             mark.CanUserAddRows = false;
             mark.IsReadOnly = true;
+
+            surname_t.MaxLength = 50;
+            name_t.MaxLength = 50;
+            patronymic_t.MaxLength = 50;
+            searh.MaxLength = 50;
         }
 
         private void mark_Focus(Canvas main_canv, Canvas mark_canve)

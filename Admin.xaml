@@ -15,9 +15,9 @@
                     <ImageBrush ImageSource="log_out_icon_128821.png" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
-            <Canvas x:Name="canv_mark_add_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Hidden">
-                <TextBox x:Name="searh" Height="32" Canvas.Left="320" Canvas.Top="10" Width="178" BorderBrush="#FF0078D7" HorizontalContentAlignment="Center" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" Foreground="#FF0767B3"/>
-                <Button x:Name="search_btn" Content="Поиск по почте" Canvas.Left="508" Canvas.Top="10" Width="133" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" Click="search_btn_Click" FontSize="12"/>
+            <Canvas x:Name="canv_mark_add_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Visible">
+                <TextBox x:Name="searh" Height="32" Canvas.Left="320" Width="178" BorderBrush="#FF0078D7" HorizontalContentAlignment="Center" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" Foreground="#FF0767B3"/>
+                <Button x:Name="search_btn" Content="Поиск по почте" Canvas.Left="503" Width="133" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" Click="search_btn_Click" FontSize="12"/>
                 <ComboBox x:Name="group_search" Canvas.Left="200" Canvas.Top="10" Width="120" Foreground="#FF0767B3" BorderBrush="#FF0767B3" Height="32"  HorizontalContentAlignment="Center" Visibility="Hidden"/>
                 <Button x:Name="group_btn" Content="Поиск по группе" Canvas.Left="325" Canvas.Top="10" Width="140" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" FontSize="12" Click="group_btn_Click" Visibility="Hidden"/>
                 <DataGrid x:Name="mark" Height="365" Canvas.Left="5" Canvas.Top="47" Width="929" Background="#FF252525" BorderBrush="#FF0767B3" Foreground="#FF0767B3" AutoGenerateColumns = "True" SelectionChanged="mark_SelectionChanged"/>
@@ -41,21 +41,40 @@
                 <Label x:Name="id_mrk_lbl" Content="" Canvas.Left="898" Canvas.Top="412" Visibility="Hidden"/>
                 <Button x:Name="del_mark" Content="Удалить оценку" Canvas.Left="774" Canvas.Top="439" Width="151" BorderBrush="#FF0767B3" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" Click="del_mark_Click"/>
             </Canvas>
-            <Canvas x:Name="canv_group_add_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Visible">
-                <TextBox x:Name="group_name" Height="32" Canvas.Left="10" Canvas.Top="362" Width="178" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
-                <TextBox x:Name="code" Height="32" Canvas.Left="10" Canvas.Top="427" Width="178" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
-                <TextBox x:Name="name" Height="32" Canvas.Left="11" Canvas.Top="493" Width="446" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
-                <Label Content="Наименование группы*" Canvas.Left="10" Canvas.Top="333" Foreground="#FF0767B3" Width="178" HorizontalContentAlignment="Center"/>
-                <Label Content="Код специальности*" Canvas.Left="10" Canvas.Top="399" Foreground="#FF0767B3" Width="178" HorizontalContentAlignment="Center"/>
-                <Label Content="Наименование отделения*" Canvas.Left="11" Canvas.Top="464" Foreground="#FF0767B3" Width="178" HorizontalContentAlignment="Center"/>
-                <Button x:Name="add_group_btn" Content="Добавить группу" Canvas.Left="462" Canvas.Top="493" Width="178" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" FontSize="12" Click="add_group_btn_Click"/>
+            <Canvas x:Name="canv_group_add_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Hidden">
+                <TextBox x:Name="group_name" Height="32" Canvas.Left="46" Canvas.Top="362" Width="178" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7" PreviewKeyDown="code_PreviewKeyDown">
+                    <TextBox.ToolTip>
+                        <ToolTip Background="#602467B8" Foreground="White" HasDropShadow="False"
+                            Placement="Bottom" HorizontalOffset="10" VerticalOffset="10">
+                            <StackPanel>
+                                <TextBlock>Пример ввода: "T50-1-17"</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </TextBox.ToolTip>
+                </TextBox>
+                <TextBox x:Name="code" Height="32" Canvas.Left="245" Canvas.Top="362" Width="178" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7" PreviewTextInput="code_PreviewTextInput" PreviewKeyDown="code_PreviewKeyDown" LostFocus="code_LostFocus">
+                    <TextBox.ToolTip>
+                        <ToolTip Background="#602467B8" Foreground="White" HasDropShadow="False"
+                            Placement="Bottom" HorizontalOffset="10" VerticalOffset="10">
+                            <StackPanel>
+                                <TextBlock>Пример ввода: "01.01.01"</TextBlock>
+                            </StackPanel>
+                        </ToolTip>
+                    </TextBox.ToolTip>
+                </TextBox>
+                <TextBox x:Name="name" Height="32" Canvas.Left="10" Canvas.Top="489" Width="446" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>
+                <Label Content="Наименование группы*" Canvas.Left="46" Canvas.Top="333" Foreground="#FF0767B3" Width="178" HorizontalContentAlignment="Center"/>
+                <Label Content="Код специальности*" Canvas.Left="245" Canvas.Top="333" Foreground="#FF0767B3" Width="178" HorizontalContentAlignment="Center"/>
+                <Label Content="Наименование отделения*" Canvas.Left="10" Canvas.Top="460" Foreground="#FF0767B3" Width="446" HorizontalContentAlignment="Center"/>
+                <Button x:Name="add_group_btn" Content="Добавить группу" Canvas.Left="578" Canvas.Top="445" Width="178" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" FontSize="12" Click="add_group_btn_Click"/>
                 <DataGrid x:Name="group_grid" Height="278" Canvas.Left="10" Canvas.Top="50" Width="929" Background="#FF252525" BorderBrush="#FF0767B3" Foreground="#FF0767B3" AutoGenerateColumns = "True" SelectionChanged="group_grid_SelectionChanged"/>
                 <ComboBox x:Name="group_s" Canvas.Left="10" Canvas.Top="10" Width="120" Foreground="#FF0767B3" BorderBrush="#FF0767B3" Height="32"  HorizontalContentAlignment="Center"/>
                 <Button x:Name="group_b" Content="Поиск по группе" Canvas.Left="135" Canvas.Top="10" Width="140" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" FontSize="12" Click="group_b_Click"/>
-                <RadioButton x:Name="add_group" Content="Добавить группу" Canvas.Left="477" Canvas.Top="441" Background="#FF0078D7" BorderBrush="{x:Null}" Foreground="#FF0767B3" GroupName ="edit_add_group" Checked="check_group" mah:ControlsHelper.RecognizesAccessKey="False" IsChecked="True" FontSize="16" Height="32"/>
-                <RadioButton x:Name="edit_group" Content="Изменить группу" Canvas.Left="631" Canvas.Top="441" Background="#FF0078D7" BorderBrush="{x:Null}" Foreground="#FF0767B3" GroupName ="edit_add_group" Checked="check_group" FontSize="16" Height="32"/>
-                <Button x:Name="del_group" Content="Удалить группу" Canvas.Left="645" Canvas.Top="493" Width="178" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" FontSize="12" Click="del_group_Click"/>
+                <RadioButton x:Name="add_group" Content="Добавить группу" Canvas.Left="593" Canvas.Top="393" Background="#FF0078D7" BorderBrush="{x:Null}" Foreground="#FF0767B3" GroupName ="edit_add_group" Checked="check_group" mah:ControlsHelper.RecognizesAccessKey="False" IsChecked="True" FontSize="16" Height="32"/>
+                <RadioButton x:Name="edit_group" Content="Изменить группу" Canvas.Left="747" Canvas.Top="393" Background="#FF0078D7" BorderBrush="{x:Null}" Foreground="#FF0767B3" GroupName ="edit_add_group" Checked="check_group" FontSize="16" Height="32"/>
+                <Button x:Name="del_group" Content="Удалить группу" Canvas.Left="761" Canvas.Top="445" Width="178" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" FontSize="12" Click="del_group_Click"/>
                 <Label x:Name="group_id" Content="" Canvas.Left="814" Canvas.Top="382" Visibility="Hidden"/>
+                <Label x:Name="error" Content="" Canvas.Left="10" Canvas.Top="416" Foreground="#DD9B1B1B" Width="446" HorizontalContentAlignment="Center"/>
             </Canvas>
             <Button x:Name="mark_canv_1" Content="Оценки" Canvas.Left="974" Canvas.Top="10" Width="167" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="{x:Null}" FontSize="12" Click="canv_next"/>
             <Button x:Name="group_canv" Content="Группы" Canvas.Left="974" Canvas.Top="47" Width="167" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="{x:Null}" FontSize="12" Click="canv_next"/>

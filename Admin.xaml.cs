@@ -115,6 +115,12 @@ namespace Journal_Diplom
                 mark_d.Items.Add(bd_discipline);
 
             }
+
+            group_name.MaxLength = 11;
+            code.MaxLength = 8;
+            name.MaxLength = 100;
+            searh.MaxLength = 50;
+            searh_student.MaxLength = 50;
         }
 
         private void group_btn_Click(object sender, RoutedEventArgs e)
@@ -673,5 +679,31 @@ namespace Journal_Diplom
                 MessageBox.Show("Проверьте соединение с интернетом");
             }
         }
+
+        private void code_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (Char.IsDigit(e.Text, 0) || (e.Text == "."))
+            {
+                e.Handled = false;
+            }
+            else e.Handled = true;
+        }
+
+        private void code_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void code_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (code.Text.Length < 8)
+            {
+                error.Content = "Длина 'Кода специальности' 8 символов";
+            }
+        }
     }
 }
+

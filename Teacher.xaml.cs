@@ -88,6 +88,11 @@ namespace Journal_Diplom
                 string bd_discipline = Journal.discipline.Rows[i].ItemArray[1].ToString();
                 mark_d.Items.Add(bd_discipline);
             }
+
+            surname_t.MaxLength = 50;
+            name_t.MaxLength = 50;
+            patronymic_t.MaxLength = 50;
+            searh.MaxLength = 50;
         }
 
         private void exit_Click(object sender, RoutedEventArgs e)

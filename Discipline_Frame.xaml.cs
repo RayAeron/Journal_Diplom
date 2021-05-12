@@ -65,6 +65,7 @@ namespace Journal_Diplom
                 string bd_group = Journal.group.Rows[i].ItemArray[1].ToString();
                 discipline_group.Items.Add(bd_group);
             }
+            name_disc.MaxLength = 100;
         }
 
         private void discipline_grid_SelectionChanged(object sender, SelectionChangedEventArgs e)
