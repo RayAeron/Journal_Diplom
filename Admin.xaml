@@ -16,7 +16,7 @@
                 </Button.Background>
             </Button>
             <Canvas x:Name="canv_mark_add_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Visible">
-                <TextBox x:Name="searh" Height="32" Canvas.Left="320" Canvas.Top="10" Width="178" BorderBrush="#FF0078D7" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7"/>
+                <TextBox x:Name="searh" Height="32" Canvas.Left="320" Canvas.Top="10" Width="178" BorderBrush="#FF0078D7" HorizontalContentAlignment="Center" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" Foreground="#FF0767B3"/>
                 <Button x:Name="search_btn" Content="Поиск по почте" Canvas.Left="508" Canvas.Top="10" Width="133" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" Click="search_btn_Click" FontSize="12"/>
                 <ComboBox x:Name="group_search" Canvas.Left="200" Canvas.Top="10" Width="120" Foreground="#FF0767B3" BorderBrush="#FF0767B3" Height="32"  HorizontalContentAlignment="Center" Visibility="Hidden"/>
                 <Button x:Name="group_btn" Content="Поиск по группе" Canvas.Left="325" Canvas.Top="10" Width="140" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" FontSize="12" Click="group_btn_Click" Visibility="Hidden"/>
@@ -61,7 +61,7 @@
             <Button x:Name="group_canv" Content="Группы" Canvas.Left="974" Canvas.Top="47" Width="167" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="{x:Null}" FontSize="12" Click="canv_next"/>
             <Button x:Name="permiss_canv" Content="Права пользователей" Canvas.Left="974" Canvas.Top="84" Width="167" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="{x:Null}" FontSize="12" Click="canv_next"/>
             <Button x:Name="discipline_canv" Content="Дисциплины" Canvas.Left="974" Canvas.Top="121" Width="167" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="{x:Null}" FontSize="12" Click="canv_next"/>
-            <Frame x:Name="frame" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Hidden"/>
+            <Frame x:Name="frame" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Hidden" NavigationUIVisibility="Hidden"/>
 
         </Canvas>
         <Canvas x:Name="permiss_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Hidden" Margin="10,10,244,10">
@@ -74,7 +74,7 @@
             <Label Content="Является ли выбранный пользователь преподавателем?" Canvas.Left="10" Canvas.Top="352" Foreground="#FF0767B3" Width="931" HorizontalContentAlignment="Center"/>
             <Label x:Name="login" Content="label" Canvas.Left="82" Canvas.Top="469" Foreground="#FF0767B3" Width="112" HorizontalContentAlignment="Center" Visibility="Hidden"/>
             <Label x:Name="permiss" Content="label" Canvas.Left="10" Canvas.Top="469" Foreground="#FF0767B3" Width="39" HorizontalContentAlignment="Center" Visibility="Hidden"/>
-            <TextBox x:Name="searh_student" Height="32" Canvas.Left="318" Canvas.Top="34" Width="178" BorderBrush="#FF0078D7" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7"/>
+            <TextBox x:Name="searh_student" Height="32" Canvas.Left="318" Canvas.Top="34" Width="178" BorderBrush="#FF0078D7" HorizontalContentAlignment="Center" Foreground="#FF0767B3" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7"/>
             <Button x:Name="searh_student_btn" Content="Поиск по почте" Canvas.Left="506" Canvas.Top="34" Width="133" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" FontSize="12" Click="searh_student_btn_Click"/>
             <Button x:Name="del_user_btn" Content="Удалить пользователя" Canvas.Left="10" Canvas.Top="455" Width="924" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" IsEnabled="False" Click="del_user_btn_Click"/>
         </Canvas>

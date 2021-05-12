@@ -5558,7 +5558,7 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[8];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[10];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_group, Name_group, Branch_code, Branch_name FROM dbo.[group]";
@@ -5584,12 +5584,9 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT id_group, Name_group, Branch_code, Branch_name FROM dbo.[group] WHERE Name" +
-                "_group= @Name_group AND  Branch_code = @Branch_code AND Branch_name= @Branch_nam" +
-                "e";
+                "_group= @Name_group";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name_group", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Name_group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Branch_code", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Branch_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Branch_name", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Branch_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
             this._commandCollection[5].CommandText = "SELECT id_group, Name_group, Branch_code, Branch_name FROM dbo.[group] WHERE Bran" +
@@ -5608,12 +5605,25 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Branch_name", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Branch_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "UPDATE       [group]\r\nSET               Name_group = @Name_group\r\nWHERE        (B" +
-                "ranch_code = @Branch_code) AND (Branch_name = @Branch_name)";
+            this._commandCollection[7].CommandText = "UPDATE       [group]\r\nSET               Name_group = @Name_group\r\nWHERE        id" +
+                "_group = @id_group\r\n";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name_group", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Name_group", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Branch_code", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Branch_code", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Branch_name", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Branch_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_group", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_group", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "UPDATE       [group]\r\nSET               Branch_code = @Branch_code\r\nWHERE        " +
+                "id_group = @id_group\r\n";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Branch_code", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Branch_code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_group", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_group", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = "UPDATE       [group]\r\nSET               Branch_name = @Branch_name\r\nWHERE        " +
+                "id_group = @id_group\r\n";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Branch_name", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "Branch_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_group", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_group", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5718,25 +5728,13 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy2(Journal.groupDataTable dataTable, string Name_group, string Branch_code, string Branch_name) {
+        public virtual int FillBy2(Journal.groupDataTable dataTable, string Name_group) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((Name_group == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Name_group));
-            }
-            if ((Branch_code == null)) {
-                throw new global::System.ArgumentNullException("Branch_code");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Branch_code));
-            }
-            if ((Branch_name == null)) {
-                throw new global::System.ArgumentNullException("Branch_name");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Branch_name));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5749,25 +5747,13 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual Journal.groupDataTable GetDataBy3(string Name_group, string Branch_code, string Branch_name) {
+        public virtual Journal.groupDataTable GetDataBy3(string Name_group) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((Name_group == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Name_group));
-            }
-            if ((Branch_code == null)) {
-                throw new global::System.ArgumentNullException("Branch_code");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Branch_code));
-            }
-            if ((Branch_name == null)) {
-                throw new global::System.ArgumentNullException("Branch_name");
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(Branch_name));
             }
             Journal.groupDataTable dataTable = new Journal.groupDataTable();
             this.Adapter.Fill(dataTable);
@@ -6070,7 +6056,7 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQuery(string Name_group, string Branch_code, string Branch_name) {
+        public virtual int UpdateQuery(string Name_group, int id_group) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[7];
             if ((Name_group == null)) {
                 command.Parameters[0].Value = global::System.DBNull.Value;
@@ -6078,18 +6064,67 @@ SELECT id_group, Name_group, Branch_code, Branch_name FROM [group] WHERE (id_gro
             else {
                 command.Parameters[0].Value = ((string)(Name_group));
             }
+            command.Parameters[1].Value = ((int)(id_group));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery1(string Branch_code, int id_group) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
             if ((Branch_code == null)) {
                 throw new global::System.ArgumentNullException("Branch_code");
             }
             else {
-                command.Parameters[1].Value = ((string)(Branch_code));
+                command.Parameters[0].Value = ((string)(Branch_code));
             }
+            command.Parameters[1].Value = ((int)(id_group));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery2(string Branch_name, int id_group) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
             if ((Branch_name == null)) {
                 throw new global::System.ArgumentNullException("Branch_name");
             }
             else {
-                command.Parameters[2].Value = ((string)(Branch_name));
+                command.Parameters[0].Value = ((string)(Branch_name));
             }
+            command.Parameters[1].Value = ((int)(id_group));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {

@@ -105,85 +105,107 @@ namespace Journal_Diplom
 
         private void reg_Click(object sender, RoutedEventArgs e)
         {
-            string group_iner = "";
-            groupTableAdapter.FillBy(Journal.group, group.Text);
-            if (!Journal.group.Rows.Count.Equals(0))
+            try
             {
-                for (int i = 0; i < Journal.group.Rows.Count; i++)
+                string group_iner = "";
+                groupTableAdapter.FillBy(Journal.group, group.Text);
+                if (!Journal.group.Rows.Count.Equals(0))
                 {
-                    string grop_id = Convert.ToString(Journal.group.Rows[i]["id_group"]);
-                    group_iner = grop_id;
+                    for (int i = 0; i < Journal.group.Rows.Count; i++)
+                    {
+                        string grop_id = Convert.ToString(Journal.group.Rows[i]["id_group"]);
+                        group_iner = grop_id;
+                    }
                 }
+                if (login_r.Text != "" && pass_r.Password != "")
+                {
+                    usersTableAdapter.FillBy(Journal.users, login_r.Text);
+                    if (Journal.users.Rows.Count.Equals(0))
+                    {
+                        if (check == "yes")
+                        {
+                            usersTableAdapter.InsertQuery1(surname.Text, name.Text, patronymic.Text, login_r.Text, pass_r.Password, check);
+                        }
+                        else
+                        {
+                            usersTableAdapter.InsertQuery(surname.Text, name.Text, patronymic.Text, login_r.Text, pass_r.Password, check, Convert.ToInt32(group_iner));
+                        }
+                        try
+                        {
+                            MailAddress from1 = new MailAddress("balance.emulation.card@gmail.com", "Register");
+                            MailAddress to1 = new MailAddress(login_r.Text);
+                            MailMessage m1 = new MailMessage(from1, to1);
+                            m1.Subject = "Регистрация";
+                            m1.Body = "Регистрация прошла успешно. Ваш логин:  " + login_r.Text + " | Ваш пароль: " + pass_r.Password + " |";
+                            m1.IsBodyHtml = true;
+                            SmtpClient smtp1 = new SmtpClient("smtp.gmail.com", 587);
+                            smtp1.Credentials = new NetworkCredential("balance.emulation.card@gmail.com", "testbalance");
+                            smtp1.EnableSsl = true;
+                            smtp1.Send(m1);
+                            Back_Focus(reg_canv, login_canv);
+                            error.Content = "Регистрация прошла успешно";
+                        }catch
+                        {
+                            MessageBox.Show("Почта введена неправильно");
+                        }
+                    }
+                    else error1.Content = "Логин существует";
+                }
+                else error1.Content = "Введите данные";
             }
-            if (login_r.Text != "" && pass_r.Password != "")
+            catch
             {
-                usersTableAdapter.FillBy(Journal.users, login_r.Text);
-                if (Journal.users.Rows.Count.Equals(0))
-                {
-                    if (check == "yes")
-                    {
-                        usersTableAdapter.InsertQuery1(surname.Text, name.Text, patronymic.Text, login_r.Text, pass_r.Password, check);
-                    }
-                    else
-                    {
-                        usersTableAdapter.InsertQuery(surname.Text, name.Text, patronymic.Text, login_r.Text, pass_r.Password, check, Convert.ToInt32(group_iner));
-                    }
-                    MailAddress from1 = new MailAddress("balance.emulation.card@gmail.com", "Register");
-                    MailAddress to1 = new MailAddress(login_r.Text);
-                    MailMessage m1 = new MailMessage(from1, to1);
-                    m1.Subject = "Регистрация";
-                    m1.Body = "Регистрация прошла успешно. Ваш логин:  " + login_r.Text + " | Ваш пароль: " + pass_r.Password + " |";
-                    m1.IsBodyHtml = true;
-                    SmtpClient smtp1 = new SmtpClient("smtp.gmail.com", 587);
-                    smtp1.Credentials = new NetworkCredential("balance.emulation.card@gmail.com", "testbalance");
-                    smtp1.EnableSsl = true;
-                    smtp1.Send(m1);
-                    Back_Focus(reg_canv, login_canv);
-                    error.Content = "Регистрация прошла успешно";
-                }
-                else error1.Content = "Логин существует";
+                MessageBox.Show("Проверьте подлючение к интернету");
             }
-            else error1.Content = "Введите данные";
+            
         }
 
         private void vhod_Click(object sender, RoutedEventArgs e)
         {
             if (login_l.Text != "" && pass_l.Password != "")
             {
-                usersTableAdapter.FillBy1(Journal.users, login_l.Text, pass_l.Password);
-                if (!Journal.users.Rows.Count.Equals(0))
+                try
                 {
-                    usersTableAdapter.FillBy2(Journal.users, login_l.Text);
+                    usersTableAdapter.FillBy1(Journal.users, login_l.Text, pass_l.Password);
                     if (!Journal.users.Rows.Count.Equals(0))
                     {
-                        string permission = Convert.ToString(Journal.users.Rows[0]["is_staff"]);
-                        switch (permission)
+                        usersTableAdapter.FillBy2(Journal.users, login_l.Text);
+                        if (!Journal.users.Rows.Count.Equals(0))
                         {
-                            case "yes":
-                                Teacher Teacher = new Teacher();
-                                Teacher.login.Content = login_l.Text;
-                                Teacher.Show();
-                                this.Close();
-                                break;
+                            string permission = Convert.ToString(Journal.users.Rows[0]["is_staff"]);
+                            switch (permission)
+                            {
+                                case "yes":
+                                    Teacher Teacher = new Teacher();
+                                    Teacher.login.Content = login_l.Text;
+                                    Teacher.Show();
+                                    this.Close();
+                                    break;
 
-                            case "no":
-                                Student Student = new Student();
-                                Student.login.Content = login_l.Text;
-                                Student.Show();
-                                this.Close();
-                                break;
+                                case "no":
+                                    Student Student = new Student();
+                                    Student.login.Content = login_l.Text;
+                                    Student.Show();
+                                    this.Close();
+                                    break;
 
-                            case "adm":
-                                Admin Admin = new Admin();
-                                Admin.Show();
-                                this.Close();
-                                break;
+                                case "adm":
+                                    Admin Admin = new Admin();
+                                    Admin.Show();
+                                    this.Close();
+                                    break;
+                            }
                         }
                     }
+                    else error.Content = "Логин или пароль не совпадают";
                 }
-                else error.Content = "Логин или пароль не совпадают";
+                catch
+                {
+                    MessageBox.Show("Проверьте подлючение к интернету");
+                }
             }
             else error.Content = "Введите данные";
+
         }
 
         private void check_staff(object sender, RoutedEventArgs e)
