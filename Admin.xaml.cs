@@ -462,8 +462,9 @@ namespace Journal_Diplom
                 group_s.Text = "";
                 permiss_combo.Text = "";
                 searh_student.Text = "";
-                
-
+                group_cmb_permiss.Text = null;
+                group_btn_permiss.IsEnabled = false;
+                del_user_btn.IsEnabled = false;
                 string pageName = null;
                 while (pageName == "Discipline_Frame.xaml")
                 {
@@ -488,6 +489,9 @@ namespace Journal_Diplom
                 mark_select.Text = "";
                 permiss_combo.Text = "";
                 searh_student.Text = "";
+                group_cmb_permiss.Text = null;
+                group_btn_permiss.IsEnabled = false;
+                del_user_btn.IsEnabled = false;
                 string pageName = null;
                 while (pageName == "Discipline_Frame.xaml")
                 {
@@ -514,6 +518,9 @@ namespace Journal_Diplom
                 mark_n.Text = "";
                 date_picker.Text = "";
                 mark_select.Text = "";
+                group_cmb_permiss.Text = null;
+                group_btn_permiss.IsEnabled = false;
+                del_user_btn.IsEnabled = false;
                 group_cmb_permiss.Items.Clear();
                 groupTableAdapter.Fill(Journal.group);
                 for (int i = 0; i < Journal.group.Rows.Count; i++)
@@ -550,6 +557,9 @@ namespace Journal_Diplom
                 mark_select.Text = "";
                 permiss_combo.Text = "";
                 searh_student.Text = "";
+                group_cmb_permiss.Text = null;
+                group_btn_permiss.IsEnabled = false;
+                del_user_btn.IsEnabled = false;
             }
         }
 
@@ -615,25 +625,28 @@ namespace Journal_Diplom
             {
                 //try
                 //{
-                    users1TableAdapter.FillBy4(Journal.users1, Convert.ToString(login.Content), Convert.ToString(permiss.Content));
-                    if (!Journal.users.Rows.Count.Equals(0))
+                users1TableAdapter.FillBy4(Journal.users1, Convert.ToString(login.Content), Convert.ToString(permiss.Content));
+                if (!Journal.users.Rows.Count.Equals(0))
+                {
+                    if (permiss_combo.Text == "yes")
                     {
-                        if (permiss_combo.Text == "yes")
-                        {
-                            users1TableAdapter.UpdateQuery(permiss_combo.Text, Convert.ToString(login.Content));
-                            users1TableAdapter.UpdateQuery1(Convert.ToString(login.Content));
-                            users1TableAdapter.Fill(Journal.users1);
-                            permiss_combo.Text = null;
-                            edit_permiss.IsEnabled = false;
-                        }
-                        if (permiss_combo.Text == "no")
-                        {
-                            users1TableAdapter.UpdateQuery(permiss_combo.Text, Convert.ToString(login.Content));
-                            users1TableAdapter.Fill(Journal.users1);
-                            permiss_combo.Text = null;
-                            edit_permiss.IsEnabled = false;
-                        }
+                        users1TableAdapter.UpdateQuery(permiss_combo.Text, Convert.ToString(login.Content));
+                        users1TableAdapter.UpdateQuery1(Convert.ToString(login.Content));
+                        users1TableAdapter.Fill(Journal.users1);
+                        permiss_combo.Text = null;
+                        edit_permiss.IsEnabled = false;
                     }
+                    if (permiss_combo.Text == "no")
+                    {
+                        users1TableAdapter.UpdateQuery(permiss_combo.Text, Convert.ToString(login.Content));
+                        users1TableAdapter.Fill(Journal.users1);
+                        permiss_combo.Text = null;
+                        edit_permiss.IsEnabled = false;
+                        group_cmb_permiss.Text = null;
+                        group_btn_permiss.IsEnabled = false;
+                        del_user_btn.IsEnabled = false;
+                    }
+                }
                 //}
                 //catch
                 //{
@@ -733,6 +746,9 @@ namespace Journal_Diplom
                 permiss_combo.Text = null;
                 edit_permiss.IsEnabled = false;
                 del_user_btn.IsEnabled = false;
+                group_cmb_permiss.Text = null;
+                group_btn_permiss.IsEnabled = false;
+                del_user_btn.IsEnabled = false;
             }
             catch
             {
@@ -777,39 +793,41 @@ namespace Journal_Diplom
 
         private void group_btn_permiss_Click(object sender, RoutedEventArgs e)
         {
-            string group_iner = "";
-            groupTableAdapter.FillBy(Journal.group, group_cmb_permiss.Text);
-            if (!Journal.group.Rows.Count.Equals(0))
+            int group_iner = 0;
+            group1TableAdapter.FillBy(Journal.group1, group_cmb_permiss.Text);
+            if (!Journal.group1.Rows.Count.Equals(0))
             {
-                for (int i = 0; i < Journal.group.Rows.Count; i++)
+                for (int i = 0; i < Journal.group1.Rows.Count; i++)
                 {
-                    string grop_id = Convert.ToString(Journal.group.Rows[i]["id_group"]);
+                    int grop_id = Convert.ToInt32(Journal.group1.Rows[i]["id_group"]);
                     group_iner = grop_id;
                 }
             }
 
-            users1TableAdapter.FillBy4(Journal.users1, Convert.ToString(login.Content), Convert.ToString(permiss.Content));
-            if (!Journal.users.Rows.Count.Equals(0))
+            users1TableAdapter.FillBy1(Journal.users1, Convert.ToString(login.Content), Convert.ToString(permiss.Content));
+            if (!Journal.users1.Rows.Count.Equals(0))
             {
-                if (permiss_combo.Text == "yes")
+                if (Convert.ToString(permiss.Content) == "yes")
                 {
-                    users1TableAdapter.UpdateQuery(permiss_combo.Text, Convert.ToString(login.Content));
-                    users1TableAdapter.UpdateQuery1(Convert.ToString(login.Content));
-                    users1TableAdapter.Fill(Journal.users1);
+                    MessageBox.Show("Нельзя добавить группу преподавателю!");
                     permiss_combo.Text = null;
                     group_cmb_permiss.Text = null;
                     edit_permiss.IsEnabled = false;
                     group_btn_permiss.IsEnabled = false;
                 }
-                if (permiss_combo.Text == "no")
+                if (Convert.ToString(permiss.Content) == "no")
                 {
-                    users1TableAdapter.UpdateQuery(permiss_combo.Text, Convert.ToString(login.Content));
-                    users1TableAdapter.Fill(Journal.users1);
+                    users1TableAdapter.UpdateQuery2(group_iner, Convert.ToString(login.Content));
                     permiss_combo.Text = null;
                     group_cmb_permiss.Text = null;
                     edit_permiss.IsEnabled = false;
                     group_btn_permiss.IsEnabled = false;
                 }
+                users1TableAdapter.Fill(Journal.users1);
+                permiss_combo.Text = null;
+                group_cmb_permiss.Text = null;
+                edit_permiss.IsEnabled = false;
+                group_btn_permiss.IsEnabled = false;
             }
         }
     }
