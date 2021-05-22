@@ -20,7 +20,7 @@
         </Canvas>
         <Canvas x:Name="mark_canv" Visibility="Hidden">
             <Button x:Name="back_mark" Content="Назад" Canvas.Left="725" BorderBrush="#FF0767B3" Canvas.Top="404" FontSize="14" Width="165" Foreground="White" Height="32" Click="back_l" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3"/>
-            <DataGrid x:Name="mark" Height="278" Canvas.Left="10" Canvas.Top="61" Width="880" Background="#FF252525" BorderBrush="#FF0767B3" Foreground="#FF0767B3" AutoGenerateColumns = "True"/>
+            <DataGrid x:Name="mark" Height="278" Canvas.Left="10" Canvas.Top="61" Width="880" Background="#FF252525" BorderBrush="#FF0767B3" Foreground="#FF0767B3" AutoGeneratingColumn="mark_AutoGeneratingColumn" />
             <TextBox x:Name="mark_n" Height="26" Canvas.Left="18"  Canvas.Top="352" Width="116" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7" Visibility="Hidden"/>
             <TextBox x:Name="mark_date" Height="26" Canvas.Left="131"  Canvas.Top="312" Width="116" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7" IsEnabled="False" Visibility="Hidden"/>
             <Button x:Name="mark_ad" Content="Добавить оценку" Canvas.Left="725" BorderBrush="#FF0767B3" Canvas.Top="367" FontSize="14" Width="165" Foreground="White" Height="32" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" Click="mark_ad_Click"/>
@@ -40,7 +40,7 @@
             </ComboBox>
             <TextBox x:Name="searh" Height="32" Canvas.Left="540" Canvas.Top="24" Width="178" BorderBrush="#FF0078D7" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7"/>
             <Button x:Name="search_btn" Content="Поиск по почте" Canvas.Left="723" Canvas.Top="24" Width="133" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" Click="search_btn_Click" FontSize="12"/>
-            <ComboBox x:Name="group_search" Canvas.Left="86" Canvas.Top="24" Width="120" Foreground="#FF0767B3" BorderBrush="#FF0767B3" Height="32"/>
+            <ComboBox x:Name="group_search" Canvas.Left="86" Canvas.Top="24" Width="120" Foreground="#FF0767B3" BorderBrush="#FF0767B3" Height="32" HorizontalContentAlignment="Center"/>
             <Button x:Name="group_btn" Content="Поиск по группе" Canvas.Left="224" Canvas.Top="24" Width="140" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" FontSize="12" Click="group_btn_Click"/>
         </Canvas>
         <Canvas x:Name="person_canv" Visibility="Hidden">

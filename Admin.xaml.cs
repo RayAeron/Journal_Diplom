@@ -48,7 +48,7 @@ namespace Journal_Diplom
             }
             catch (WebException)
             {
-                MessageBox.Show("Проверьте подлючение к интернету");
+                MessageBox.Show("Проверьте подключение к интернету");
                 this.Close();
                 Process.GetCurrentProcess().Kill();
             }
@@ -107,17 +107,16 @@ namespace Journal_Diplom
             {
                 string bd_group = Journal.group.Rows[i].ItemArray[1].ToString();
                 group_s.Items.Add(bd_group);
+                group_cmb_permiss.Items.Add(bd_group);
             }
 
             for (int i = 0; i < Journal.discipline.Rows.Count; i++)
             {
                 string bd_discipline = Journal.discipline.Rows[i].ItemArray[1].ToString();
                 mark_d.Items.Add(bd_discipline);
-
             }
 
             group_name.MaxLength = 11;
-            code.MaxLength = 8;
             name.MaxLength = 100;
             searh.MaxLength = 50;
             searh_student.MaxLength = 50;
@@ -175,14 +174,23 @@ namespace Journal_Diplom
 
         private void search_btn_Click(object sender, RoutedEventArgs e)
         {
-            try {
-                Mark_VTableAdapter.FillBy(Journal.Mark_V, searh.Text);
+            try
+            {
+                if (searh.Text == "")
+                {
+                    Mark_VTableAdapter.Fill(Journal.Mark_V);
+                }
+                else
+                {
+                    Mark_VTableAdapter.FillBy(Journal.Mark_V, searh.Text);
+                }
             }
             catch
             {
                 MessageBox.Show("Проверьте соединение с интернетом");
             }
         }
+
 
         private void mark_ad_Click(object sender, RoutedEventArgs e)
         {
@@ -264,38 +272,38 @@ namespace Journal_Diplom
                     }
                     //
                     string id_mrk = Convert.ToString(id_mrk_lbl.Content);
-                    if (mark_select.Text != "")
+                    //if (mark_select.Text != "")
                     {
                         markTableAdapter.UpdateQuery(mark_select.Text, Convert.ToInt32(id_mrk));
                         mark_select.Text = null;
                         Mark_VTableAdapter.Fill(Journal.Mark_V);
                     }
-                    else MessageBox.Show("Введите данные");
+                    //else MessageBox.Show("Введите данные");
                     //
-                    if (date_picker.Text != "" && mark_date.Text != "")
+                    //if (date_picker.Text != "" && mark_date.Text != "")
                     {
                         markTableAdapter.UpdateQuery1(date_picker.Text, Convert.ToInt32(id_mrk));
                         date_picker.Text = null;
                         mark_date.Text = null;
                         Mark_VTableAdapter.Fill(Journal.Mark_V);
                     }
-                    else MessageBox.Show("Введите данные");
+                    //else MessageBox.Show("Введите данные");
                     //
-                    if (mark_d.Text != "")
+                    //if (mark_d.Text != "")
                     {
                         markTableAdapter.UpdateQuery2(Convert.ToInt32(discipline_iner), Convert.ToInt32(id_mrk));
                         mark_d.Text = null;
                         Mark_VTableAdapter.Fill(Journal.Mark_V);
                     }
-                    else MessageBox.Show("Введите данные");
+                    //else MessageBox.Show("Введите данные");
                     //
-                    if (mark_student.Text != "")
+                    //if (mark_student.Text != "")
                     {
                         markTableAdapter.UpdateQuery3(Convert.ToInt32(users_iner), Convert.ToInt32(id_mrk));
                         mark_student.Text = null;
                         Mark_VTableAdapter.Fill(Journal.Mark_V);
                     }
-                    else MessageBox.Show("Введите данные");
+                    //else MessageBox.Show("Введите данные");
 
                 }
                 catch
@@ -325,6 +333,7 @@ namespace Journal_Diplom
                         if (group_name.Text != "" && name.Text != "" && code.Text != "")
                         {
                             groupTableAdapter.InsertQuery(group_name.Text, code.Text, name.Text);
+                            error.Content = null;
                         }
                         else MessageBox.Show("Введите данные");
                     }
@@ -414,7 +423,15 @@ namespace Journal_Diplom
         {
             try
             {
-                groupTableAdapter.FillBy(Journal.group, group_s.Text);
+                if (group_s.Text == "")
+                {
+                    groupTableAdapter.Fill(Journal.group);
+                }
+                else
+                {
+                    groupTableAdapter.FillBy(Journal.group, group_s.Text);
+                }
+                
             }
             catch
             {
@@ -430,6 +447,14 @@ namespace Journal_Diplom
                 canv_group_add_edit.Visibility = Visibility.Hidden;
                 permiss_edit.Visibility = Visibility.Hidden;
                 frame.Visibility = Visibility.Hidden;
+                disciplineTableAdapter.Fill(Journal.discipline);
+                Mark_VTableAdapter.Fill(Journal.Mark_V);
+                mark_d.Items.Clear();
+                for (int i = 0; i < Journal.discipline.Rows.Count; i++)
+                {
+                    string bd_discipline = Journal.discipline.Rows[i].ItemArray[1].ToString();
+                    mark_d.Items.Add(bd_discipline);
+                }
                 ///
                 group_name.Text = "";
                 name.Text = "";
@@ -437,6 +462,8 @@ namespace Journal_Diplom
                 group_s.Text = "";
                 permiss_combo.Text = "";
                 searh_student.Text = "";
+                
+
                 string pageName = null;
                 while (pageName == "Discipline_Frame.xaml")
                 {
@@ -487,6 +514,13 @@ namespace Journal_Diplom
                 mark_n.Text = "";
                 date_picker.Text = "";
                 mark_select.Text = "";
+                group_cmb_permiss.Items.Clear();
+                groupTableAdapter.Fill(Journal.group);
+                for (int i = 0; i < Journal.group.Rows.Count; i++)
+                {
+                    string bd_group = Journal.group.Rows[i].ItemArray[1].ToString();
+                    group_cmb_permiss.Items.Add(bd_group);
+                }
                 string pageName = null;
                 while (pageName == "Discipline_Frame.xaml")
                 {
@@ -535,26 +569,29 @@ namespace Journal_Diplom
 
         private void del_group_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                DataRowView selectedatarow = (DataRowView)group_grid.SelectedItem;
-                for (int i = 0; i < Journal.users.Rows.Count; i++)
-                {
-                    string users_del = Journal.users.Rows[i].ItemArray[7].ToString();
-                    usersTableAdapter.DeleteQuery1(Convert.ToInt32(selectedatarow.Row.ItemArray[0]));
-                    Mark_VTableAdapter.Fill(Journal.Mark_V);
-                    users1TableAdapter.Fill(Journal.users1);
-                }
-                groupTableAdapter.DeleteQuery(Convert.ToInt32(selectedatarow.Row.ItemArray[0]));
-                groupTableAdapter.Fill(Journal.group);
-                group_name.Text = "";
-                name.Text = "";
-                code.Text = "";
-            }
-            catch
-            {
-                MessageBox.Show("Проверьте соединение с интернетом");
-            }
+            //try
+            //{
+            DataRowView selectedatarow = (DataRowView)group_grid.SelectedItem;
+            //for (int i = 0; i < Journal.users.Rows.Count; i++)
+            //{
+            //    string users_del = Journal.users.Rows[i].ItemArray[7].ToString();
+            //    usersTableAdapter.DeleteQuery1(Convert.ToInt32(selectedatarow.Row.ItemArray[0]));
+            //    Mark_VTableAdapter.Fill(Journal.Mark_V);
+            //    users1TableAdapter.Fill(Journal.users1);
+            //}
+            groupTableAdapter.DeleteQuery(Convert.ToInt32(selectedatarow.Row.ItemArray[0]));
+            disciplineTableAdapter.DeleteQuery1();
+            groupTableAdapter.Fill(Journal.group);
+            users1TableAdapter.Fill(Journal.users1);
+            Mark_VTableAdapter.Fill(Journal.Mark_V);
+            group_name.Text = "";
+            name.Text = "";
+            code.Text = "";
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Проверьте соединение с интернетом");
+            //}
         }
 
         private void mark_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -572,23 +609,36 @@ namespace Journal_Diplom
 
         private void edit_permiss_Click(object sender, RoutedEventArgs e)
         {
+            string group_null = null;
+            int group_null_int = Convert.ToInt32(group_null);
             if (permiss_combo.Text != "")
             {
-                try
-                {
+                //try
+                //{
                     users1TableAdapter.FillBy4(Journal.users1, Convert.ToString(login.Content), Convert.ToString(permiss.Content));
                     if (!Journal.users.Rows.Count.Equals(0))
                     {
-                        users1TableAdapter.UpdateQuery(permiss_combo.Text, Convert.ToString(login.Content));
-                        users1TableAdapter.Fill(Journal.users1);
-                        permiss_combo.Text = null;
-                        edit_permiss.IsEnabled = false;
+                        if (permiss_combo.Text == "yes")
+                        {
+                            users1TableAdapter.UpdateQuery(permiss_combo.Text, Convert.ToString(login.Content));
+                            users1TableAdapter.UpdateQuery1(Convert.ToString(login.Content));
+                            users1TableAdapter.Fill(Journal.users1);
+                            permiss_combo.Text = null;
+                            edit_permiss.IsEnabled = false;
+                        }
+                        if (permiss_combo.Text == "no")
+                        {
+                            users1TableAdapter.UpdateQuery(permiss_combo.Text, Convert.ToString(login.Content));
+                            users1TableAdapter.Fill(Journal.users1);
+                            permiss_combo.Text = null;
+                            edit_permiss.IsEnabled = false;
+                        }
                     }
-                }
-                catch
-                {
-                    MessageBox.Show("Проверьте соединение с интернетом");
-                }
+                //}
+                //catch
+                //{
+                //    MessageBox.Show("Проверьте соединение с интернетом");
+                //}
             }
             else MessageBox.Show("Выберите один из вариантов из списка!");
         }
@@ -598,9 +648,12 @@ namespace Journal_Diplom
             DataRowView selecteDataRow = (DataRowView)permiss_grid.SelectedItem;
             if (selecteDataRow != null)
             {
+                id_user.Content = selecteDataRow.Row.ItemArray[0].ToString();
+                id_group_lbl.Content = selecteDataRow.Row.ItemArray[7].ToString();
                 permiss.Content = selecteDataRow.Row.ItemArray[6].ToString();
                 login.Content = selecteDataRow.Row.ItemArray[4].ToString();
                 edit_permiss.IsEnabled = true;
+                group_btn_permiss.IsEnabled = true;
                 string log = Convert.ToString(permiss.Content);
                 if (log == "adm")
                 {
@@ -629,7 +682,14 @@ namespace Journal_Diplom
         {
             try
             {
-                usersTableAdapter.FillBy(Journal.users, searh_student.Text);
+                if(searh_student.Text == "")
+                {
+                    users1TableAdapter.Fill(Journal.users1);
+                }
+                else
+                {
+                    users1TableAdapter.FillBy(Journal.users1, searh_student.Text);
+                }
             }
             catch
             {
@@ -662,21 +722,21 @@ namespace Journal_Diplom
             try
             {
                 DataRowView selectedatarow = (DataRowView)permiss_grid.SelectedItem;
-                for (int i = 0; i < Journal.mark.Rows.Count; i++)
+                for (int i = 0; i < Journal.discipline.Rows.Count; i++)
                 {
-                    string mark_del = Journal.mark.Rows[i].ItemArray[4].ToString();
-                    markTableAdapter.DeleteQuery1(Convert.ToInt32(selectedatarow.Row.ItemArray[0]));
-                    Mark_VTableAdapter.Fill(Journal.Mark_V);
+                    int discipline_del_int = Convert.ToInt32(id_user.Content);
+                    disciplineTableAdapter.DeleteQuery2(discipline_del_int);
                 }
                 usersTableAdapter.DeleteQuery(Convert.ToInt32(selectedatarow.Row.ItemArray[0]));
                 users1TableAdapter.Fill(Journal.users1);
+                Mark_VTableAdapter.Fill(Journal.Mark_V);
                 permiss_combo.Text = null;
                 edit_permiss.IsEnabled = false;
                 del_user_btn.IsEnabled = false;
             }
             catch
             {
-                MessageBox.Show("Проверьте соединение с интернетом");
+                MessageBox.Show("Сначала удалите дисциплины связанные с данным преподавателем");
             }
         }
 
@@ -702,6 +762,54 @@ namespace Journal_Diplom
             if (code.Text.Length < 8)
             {
                 error.Content = "Длина 'Кода специальности' 8 символов";
+            }
+        }
+
+        private void mark_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
+            e.Column.Header = propertyDescriptor.DisplayName;
+            if (propertyDescriptor.DisplayName == "id_mark")
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void group_btn_permiss_Click(object sender, RoutedEventArgs e)
+        {
+            string group_iner = "";
+            groupTableAdapter.FillBy(Journal.group, group_cmb_permiss.Text);
+            if (!Journal.group.Rows.Count.Equals(0))
+            {
+                for (int i = 0; i < Journal.group.Rows.Count; i++)
+                {
+                    string grop_id = Convert.ToString(Journal.group.Rows[i]["id_group"]);
+                    group_iner = grop_id;
+                }
+            }
+
+            users1TableAdapter.FillBy4(Journal.users1, Convert.ToString(login.Content), Convert.ToString(permiss.Content));
+            if (!Journal.users.Rows.Count.Equals(0))
+            {
+                if (permiss_combo.Text == "yes")
+                {
+                    users1TableAdapter.UpdateQuery(permiss_combo.Text, Convert.ToString(login.Content));
+                    users1TableAdapter.UpdateQuery1(Convert.ToString(login.Content));
+                    users1TableAdapter.Fill(Journal.users1);
+                    permiss_combo.Text = null;
+                    group_cmb_permiss.Text = null;
+                    edit_permiss.IsEnabled = false;
+                    group_btn_permiss.IsEnabled = false;
+                }
+                if (permiss_combo.Text == "no")
+                {
+                    users1TableAdapter.UpdateQuery(permiss_combo.Text, Convert.ToString(login.Content));
+                    users1TableAdapter.Fill(Journal.users1);
+                    permiss_combo.Text = null;
+                    group_cmb_permiss.Text = null;
+                    edit_permiss.IsEnabled = false;
+                    group_btn_permiss.IsEnabled = false;
+                }
             }
         }
     }

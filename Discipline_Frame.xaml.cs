@@ -29,6 +29,8 @@ namespace Journal_Diplom
         disciplineTableAdapter disciplineTableAdapter;
         groupTableAdapter groupTableAdapter;
         Discipline_VTableAdapter Discipline_VTableAdapter;
+        markTableAdapter markTableAdapter;
+        Mark_VTableAdapter Mark_VTableAdapter;
         string check = "add_disc";
         public Discipline_Frame()
         {
@@ -43,6 +45,12 @@ namespace Journal_Diplom
 
             disciplineTableAdapter = new disciplineTableAdapter();
             disciplineTableAdapter.Fill(Journal.discipline);
+
+            markTableAdapter = new markTableAdapter();
+            markTableAdapter.Fill(Journal.mark);
+
+            Mark_VTableAdapter = new Mark_VTableAdapter();
+            Mark_VTableAdapter.Fill(Journal.Mark_V);
 
             Discipline_VTableAdapter = new Discipline_VTableAdapter();
             Discipline_VTableAdapter.Fill(Journal.Discipline_V);
@@ -133,6 +141,7 @@ namespace Journal_Diplom
                             else MessageBox.Show("Введите данные");
                         }
                         else MessageBox.Show("Такая дисциплина уже есть!");
+                        disciplineTableAdapter.Fill(Journal.discipline);
                     }
                     catch
                     {
@@ -198,19 +207,21 @@ namespace Journal_Diplom
 
         private void del_dis_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                DataRowView selectedatarow = (DataRowView)discipline_grid.SelectedItem;
-                disciplineTableAdapter.DeleteQuery(Convert.ToInt32(selectedatarow.Row.ItemArray[0]));
-                Discipline_VTableAdapter.Fill(Journal.Discipline_V);
-                name_disc.Clear();
-                discipline_group.Text = "";
-                discipline_teacher.Text = "";
-            }
-            catch
-            {
-                MessageBox.Show("Ошибка");
-            }
+            //try
+            //{
+            DataRowView selectedatarow = (DataRowView)discipline_grid.SelectedItem;
+            disciplineTableAdapter.DeleteQuery(Convert.ToInt32(selectedatarow.Row.ItemArray[0]));
+            Discipline_VTableAdapter.Fill(Journal.Discipline_V);
+            Mark_VTableAdapter.Fill(Journal.Mark_V);
+            name_disc.Clear();
+            discipline_group.Text = "";
+            discipline_teacher.Text = "";
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Ошибка");
+            //}
         }
+
     }
 }

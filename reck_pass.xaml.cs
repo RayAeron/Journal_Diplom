@@ -128,8 +128,6 @@ namespace Journal_Diplom
                 if (!Journal.users.Rows.Count.Equals(0) && edit_pass.Password != "" && rep_edit_pass.Password != "")
                 {
                     usersTableAdapter.UpdateQuery(rep_edit_pass.Password, r_pass.Text);
-                    MainWindow MainWindow = new MainWindow();
-                    MainWindow.Show();
                     this.Close();
                 }
                 else error2.Content = "Введите данные";

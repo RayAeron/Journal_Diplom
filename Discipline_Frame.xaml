@@ -14,7 +14,7 @@
         <Button x:Name="add_discipline_btn" HorizontalAlignment="Left" Margin="474,390,0,0" VerticalAlignment="Top" Width="195" Content="Добавить дисциплину" BorderBrush="#FF0767B3" Foreground="White" Background="#FF0767B3" FontSize="12" Height="32" Click="add_discipline_btn_Click" />
         <ComboBox x:Name="discipline_group" HorizontalAlignment="Left" Margin="193,411,0,0" VerticalAlignment="Top" Width="120"  Foreground="#FF0767B3" BorderBrush="#FF0767B3" Height="32"  HorizontalContentAlignment="Center"/>
         <ComboBox x:Name="discipline_teacher" HorizontalAlignment="Left" Margin="318,411,0,0" VerticalAlignment="Top" Width="120"  Foreground="#FF0767B3" BorderBrush="#FF0767B3" Height="32"  HorizontalContentAlignment="Center"/>
-        <Label x:Name="id_disc" Content="" HorizontalAlignment="Left" Margin="51,451,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
+        <Label x:Name="id_disc" Content="" HorizontalAlignment="Left" Margin="333,482,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
         <Label Content="Группа" Foreground="#FF0767B3" Margin="193,383,631,152" HorizontalContentAlignment="Center"/>
         <Label Content="Преподаватель" Foreground="#FF0767B3" Margin="318,383,506,152" HorizontalContentAlignment="Center"/>
         <Label Content="Название дисциплины" Foreground="#FF0767B3" Margin="10,383,756,152" HorizontalContentAlignment="Center"/>

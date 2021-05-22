@@ -2,6 +2,7 @@
 using MahApps.Metro.Controls;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Net;
@@ -29,7 +30,7 @@ namespace Journal_Diplom
         Mark_VTableAdapter Mark_VTableAdapter;
         disciplineTableAdapter disciplineTableAdapter;
         groupTableAdapter groupTableAdapter;
-        string trysi;
+        string log;
         public Teacher()
         {
             InitializeComponent();
@@ -147,7 +148,7 @@ namespace Journal_Diplom
             {
                 person_Focus(main_canv, person_canv);
                 Title = "Личный кабинет";
-                trysi = Convert.ToString(login.Content);
+                log = Convert.ToString(login.Content);
                 try
                 {
                     usersTableAdapter.FillBy(Journal.users, Convert.ToString(login.Content));
@@ -176,7 +177,7 @@ namespace Journal_Diplom
             {
                 try
                 {
-                    usersTableAdapter.UpdateQuery1(surname_t.Text, trysi);
+                    usersTableAdapter.UpdateQuery1(surname_t.Text, log);
                     surname_s.Content = surname_t.Text;
                     surname_t.Text = null;
                 }
@@ -194,7 +195,7 @@ namespace Journal_Diplom
             {
                 try
                 {
-                    usersTableAdapter.UpdateQuery2(name_t.Text, trysi);
+                    usersTableAdapter.UpdateQuery2(name_t.Text, log);
                     name_s.Content = name_t.Text;
                     name_t.Text = null;
                 }
@@ -212,7 +213,7 @@ namespace Journal_Diplom
             {
                 try
                 {
-                    usersTableAdapter.UpdateQuery3(patronymic_t.Text, trysi);
+                    usersTableAdapter.UpdateQuery3(patronymic_t.Text, log);
                     patronymic_s.Content = patronymic_t.Text;
                     patronymic_t.Text = null;
                 }
@@ -277,7 +278,14 @@ namespace Journal_Diplom
         {
             try
             {
-                Mark_VTableAdapter.FillBy(Journal.Mark_V, searh.Text);
+                if(searh.Text == "")
+                {
+                    Mark_VTableAdapter.Fill(Journal.Mark_V);
+                }
+                else
+                {
+                    Mark_VTableAdapter.FillBy(Journal.Mark_V, searh.Text);
+                }
             }
             catch
             {
@@ -331,6 +339,16 @@ namespace Journal_Diplom
             catch
             {
                 MessageBox.Show("Проверьте соединение с интернетом");
+            }
+        }
+
+        private void mark_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            PropertyDescriptor propertyDescriptor = (PropertyDescriptor)e.PropertyDescriptor;
+            e.Column.Header = propertyDescriptor.DisplayName;
+            if (propertyDescriptor.DisplayName == "id_mark")
+            {
+                e.Cancel = true;
             }
         }
     }

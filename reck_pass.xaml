@@ -12,7 +12,7 @@
             <TextBox x:Name="r_pass" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top" Width="168" Canvas.Left="12" Canvas.Top="54" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" CaretBrush="#FF0078D7"/>
             <Label Content="Введите почту к которой привязан аккаунт" HorizontalAlignment="Left" VerticalAlignment="Top" Width="269" Canvas.Left="12" Canvas.Top="23" Foreground="#FF0767B3"/>
             <Button x:Name="rec_pass" Content="Восстановить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="96" Height="28" Click="rec_pass_Click" Canvas.Left="185" Canvas.Top="54" FontSize="10" Background="#FF0767B3" BorderBrush="{x:Null}"/>
-            <Label x:Name="error" Canvas.Left="12" Canvas.Top="82" Width="269" Foreground="Red" FontSize="10" Height="21" HorizontalContentAlignment="Center" Background="{x:Null}"/>
+            <Label x:Name="error" Canvas.Left="12" Canvas.Top="97" Width="269" Foreground="Red" FontSize="10" Height="21" HorizontalContentAlignment="Center" Background="{x:Null}"/>
         </Canvas>
         <Canvas x:Name="recovery_kod" Visibility="Hidden">
             <TextBox x:Name="kod" HorizontalAlignment="Left" Height="22" VerticalAlignment="Top" Width="65" Canvas.Left="72" Canvas.Top="54" PreviewTextInput="kod_PreviewTextInput" PreviewKeyDown="kod_PreviewKeyDown" Background="#FF38393E" BorderBrush="{x:Null}" CaretBrush="#FF0078D7" Foreground="White" mah:ControlsHelper.MouseOverBorderBrush="#FF0078D7"/>

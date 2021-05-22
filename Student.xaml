@@ -20,7 +20,7 @@
         </Canvas>
         <Canvas x:Name="mark_canv" Visibility="Hidden">
             <Button x:Name="back_mark" Content="Назад" Canvas.Left="725" BorderBrush="#FF0767B3" Canvas.Top="404" FontSize="14" Width="165" Foreground="White" Height="32" Click="back_l" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3"/>
-            <DataGrid x:Name="mark" Height="274" Canvas.Left="10" Canvas.Top="100" Width="880" Background="#FF252525" BorderBrush="#FF0767B3" Foreground="#FF0767B3" AutoGenerateColumns = "True"/>
+            <DataGrid x:Name="mark" Height="274" Canvas.Left="10" Canvas.Top="100" Width="880" Background="#FF252525" BorderBrush="#FF0767B3" Foreground="#FF0767B3" AutoGeneratingColumn="mark_AutoGeneratingColumn" />
             <TextBox x:Name="searh"  Height="32" Canvas.Left="346" Canvas.Top="63" Width="178" BorderBrush="#FF0078D7" HorizontalContentAlignment="Center" Foreground="#FFE6EAFE" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7"/>
             <Label Content="Поиск" Canvas.Left="410" Canvas.Top="31" Foreground="#FFE6EAFE" FontSize="14" FontWeight="Bold"/>
             <Button x:Name="search_btn" Content="Поиск" Canvas.Left="543" Canvas.Top="63" Width="75" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" Click="search_btn_Click"/>

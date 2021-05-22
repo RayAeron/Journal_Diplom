@@ -17,8 +17,6 @@ namespace Journal_Diplom
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
-        
-
         Journal Journal;
         usersTableAdapter usersTableAdapter;
         groupTableAdapter groupTableAdapter;
@@ -37,7 +35,7 @@ namespace Journal_Diplom
             }
             catch (WebException)
             {
-                MessageBox.Show("Проверьте подлючение к интернету");
+                MessageBox.Show("Проверьте подключение к интернету");
                 this.Close();
                 Process.GetCurrentProcess().Kill();
             }
@@ -122,19 +120,19 @@ namespace Journal_Diplom
                     usersTableAdapter.FillBy(Journal.users, login_r.Text);
                     if (Journal.users.Rows.Count.Equals(0))
                     {
-                        if (check == "yes")
-                        {
-                            usersTableAdapter.InsertQuery1(surname.Text, name.Text, patronymic.Text, login_r.Text, pass_r.Password, check);
-                        }
-                        else
-                        {
-                            usersTableAdapter.InsertQuery(surname.Text, name.Text, patronymic.Text, login_r.Text, pass_r.Password, check, Convert.ToInt32(group_iner));
-                        }
                         try
                         {
                             MailAddress from1 = new MailAddress("balance.emulation.card@gmail.com", "Register");
                             MailAddress to1 = new MailAddress(login_r.Text);
                             MailMessage m1 = new MailMessage(from1, to1);
+                            if (check == "yes")
+                            {
+                                usersTableAdapter.InsertQuery1(surname.Text, name.Text, patronymic.Text, login_r.Text, pass_r.Password, check);
+                            }
+                            else
+                            {
+                                usersTableAdapter.InsertQuery(surname.Text, name.Text, patronymic.Text, login_r.Text, pass_r.Password, check, Convert.ToInt32(group_iner));
+                            }
                             m1.Subject = "Регистрация";
                             m1.Body = "Регистрация прошла успешно. Ваш логин:  " + login_r.Text + " | Ваш пароль: " + pass_r.Password + " |";
                             m1.IsBodyHtml = true;
@@ -144,7 +142,8 @@ namespace Journal_Diplom
                             smtp1.Send(m1);
                             Back_Focus(reg_canv, login_canv);
                             error.Content = "Регистрация прошла успешно";
-                        }catch
+                        }
+                        catch
                         {
                             MessageBox.Show("Почта введена неправильно");
                         }
@@ -155,7 +154,7 @@ namespace Journal_Diplom
             }
             catch
             {
-                MessageBox.Show("Проверьте подлючение к интернету");
+                MessageBox.Show("Проверьте подключение к интернету");
             }
             
         }
@@ -164,8 +163,8 @@ namespace Journal_Diplom
         {
             if (login_l.Text != "" && pass_l.Password != "")
             {
-                try
-                {
+                //try
+                //{
                     usersTableAdapter.FillBy1(Journal.users, login_l.Text, pass_l.Password);
                     if (!Journal.users.Rows.Count.Equals(0))
                     {
@@ -198,11 +197,11 @@ namespace Journal_Diplom
                         }
                     }
                     else error.Content = "Логин или пароль не совпадают";
-                }
-                catch
-                {
-                    MessageBox.Show("Проверьте подлючение к интернету");
-                }
+                //}
+                //catch
+                //{
+                //    MessageBox.Show("Проверьте подключение к интернету");
+                //}
             }
             else error.Content = "Введите данные";
 
@@ -271,6 +270,14 @@ namespace Journal_Diplom
                 theme2--;
                 var bc = new BrushConverter();
 
+            }
+        }
+
+        private void login_r_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Space)
+            {
+                e.Handled = true;
             }
         }
     }
