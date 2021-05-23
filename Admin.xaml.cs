@@ -447,6 +447,7 @@ namespace Journal_Diplom
                 canv_group_add_edit.Visibility = Visibility.Hidden;
                 permiss_edit.Visibility = Visibility.Hidden;
                 frame.Visibility = Visibility.Hidden;
+                frame_prepod.Visibility = Visibility.Hidden;
                 disciplineTableAdapter.Fill(Journal.discipline);
                 Mark_VTableAdapter.Fill(Journal.Mark_V);
                 mark_d.Items.Clear();
@@ -472,6 +473,13 @@ namespace Journal_Diplom
                     JournalEntry entry = frame.RemoveBackEntry();
                     pageName = System.IO.Path.GetFileName(entry.Source.ToString());
                 }
+                string kuratorPage = null;
+                while (kuratorPage == "prepod_reg.xaml")
+                {
+                    frame_prepod.NavigationService.RemoveBackEntry();
+                    JournalEntry entry = frame_prepod.RemoveBackEntry();
+                    kuratorPage = System.IO.Path.GetFileName(entry.Source.ToString());
+                }
             }
             if (((Button)sender).Content.Equals("Группы"))
             {
@@ -479,6 +487,7 @@ namespace Journal_Diplom
                 canv_mark_add_edit.Visibility = Visibility.Hidden;
                 permiss_edit.Visibility = Visibility.Hidden;
                 frame.Visibility = Visibility.Hidden;
+                frame_prepod.Visibility = Visibility.Hidden;
                 ///
                 searh.Text = "";
                 mark_d.Text = "";
@@ -499,6 +508,13 @@ namespace Journal_Diplom
                     JournalEntry entry = frame.RemoveBackEntry();
                     pageName = System.IO.Path.GetFileName(entry.Source.ToString());
                 }
+                string kuratorPage = null;
+                while (kuratorPage == "prepod_reg.xaml")
+                {
+                    frame_prepod.NavigationService.RemoveBackEntry();
+                    JournalEntry entry = frame_prepod.RemoveBackEntry();
+                    kuratorPage = System.IO.Path.GetFileName(entry.Source.ToString());
+                }
             }
             if (((Button)sender).Content.Equals("Права пользователей"))
             {
@@ -506,6 +522,7 @@ namespace Journal_Diplom
                 canv_mark_add_edit.Visibility = Visibility.Hidden;
                 canv_group_add_edit.Visibility = Visibility.Hidden;
                 frame.Visibility = Visibility.Hidden;
+                frame_prepod.Visibility = Visibility.Hidden;
                 ///
                 searh.Text = "";
                 group_name.Text = "";
@@ -535,11 +552,45 @@ namespace Journal_Diplom
                     JournalEntry entry = frame.RemoveBackEntry();
                     pageName = System.IO.Path.GetFileName(entry.Source.ToString());
                 }
+                string kuratorPage = null;
+                while (kuratorPage == "prepod_reg.xaml")
+                {
+                    frame_prepod.NavigationService.RemoveBackEntry();
+                    JournalEntry entry = frame_prepod.RemoveBackEntry();
+                    kuratorPage = System.IO.Path.GetFileName(entry.Source.ToString());
+                }
             }
             if (((Button)sender).Content.Equals("Дисциплины"))
             {
                 frame.Navigate(new Discipline_Frame());
                 frame.Visibility = Visibility.Visible;
+                frame_prepod.Visibility = Visibility.Hidden;
+                permiss_edit.Visibility = Visibility.Hidden;
+                canv_mark_add_edit.Visibility = Visibility.Hidden;
+                canv_group_add_edit.Visibility = Visibility.Hidden;
+                ///
+                searh.Text = "";
+                group_name.Text = "";
+                name.Text = "";
+                code.Text = "";
+                group_s.Text = "";
+                mark_d.Text = "";
+                mark_student.Text = "";
+                mark_date.Text = "";
+                mark_n.Text = "";
+                date_picker.Text = "";
+                mark_select.Text = "";
+                permiss_combo.Text = "";
+                searh_student.Text = "";
+                group_cmb_permiss.Text = null;
+                group_btn_permiss.IsEnabled = false;
+                del_user_btn.IsEnabled = false;
+            }
+            if (((Button)sender).Content.Equals("Кураторы"))
+            {
+                frame_prepod.Navigate(new prepod_reg());
+                frame_prepod.Visibility = Visibility.Visible;
+                frame.Visibility = Visibility.Hidden;
                 permiss_edit.Visibility = Visibility.Hidden;
                 canv_mark_add_edit.Visibility = Visibility.Hidden;
                 canv_group_add_edit.Visibility = Visibility.Hidden;
@@ -793,6 +844,7 @@ namespace Journal_Diplom
 
         private void group_btn_permiss_Click(object sender, RoutedEventArgs e)
         {
+
             int group_iner = 0;
             group1TableAdapter.FillBy(Journal.group1, group_cmb_permiss.Text);
             if (!Journal.group1.Rows.Count.Equals(0))

@@ -35,9 +35,9 @@
             <Label Content="Отчество" Canvas.Left="257" Canvas.Top="221" Foreground="#FF0767B3" Width="178" HorizontalContentAlignment="Center"/>
             <ComboBox x:Name="group" Canvas.Left="61" Canvas.Top="250" Width="178" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FF0767B3" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Height="31" mah:ControlsHelper.MouseOverBorderBrush="#FF0767B3"/>
             <Label Content="Группы" Canvas.Left="61" Canvas.Top="221" Foreground="#FF0767B3" Width="178" HorizontalContentAlignment="Center"/>
-            <RadioButton x:Name="yes" Content="Да" Canvas.Left="183" Canvas.Top="321" Background="#FF0078D7" BorderBrush="{x:Null}" Foreground="#FF0767B3" GroupName ="yesno" Checked="check_staff" mah:ControlsHelper.RecognizesAccessKey="False"/>
-            <RadioButton x:Name="no" Content="Нет" Canvas.Left="257" Canvas.Top="321" Background="#FF0078D7" BorderBrush="{x:Null}" Foreground="#FF0767B3" GroupName ="yesno" Checked="check_staff" IsChecked="True"/>
-            <Label Content="Являетесь ли вы преподавателем?*" Canvas.Left="140" Canvas.Top="292" Foreground="#FF0767B3" HorizontalContentAlignment="Center" Width="217"/>
+            <RadioButton x:Name="yes" Content="Да" Canvas.Left="183" Canvas.Top="321" Background="#FF0078D7" BorderBrush="{x:Null}" Foreground="#FF0767B3" GroupName ="yesno" Checked="check_staff" mah:ControlsHelper.RecognizesAccessKey="False" Visibility="Hidden"/>
+            <RadioButton x:Name="no" Content="Нет" Canvas.Left="257" Canvas.Top="321" Background="#FF0078D7" BorderBrush="{x:Null}" Foreground="#FF0767B3" GroupName ="yesno" Checked="check_staff" IsChecked="True" Visibility="Hidden"/>
+            <Label Content="Являетесь ли вы преподавателем?*" Canvas.Left="140" Canvas.Top="292" Foreground="#FF0767B3" HorizontalContentAlignment="Center" Width="217" Visibility="Hidden"/>
         </Canvas>
     </Grid>
 </mah:MetroWindow>

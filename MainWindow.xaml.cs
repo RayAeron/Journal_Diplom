@@ -125,14 +125,14 @@ namespace Journal_Diplom
                             MailAddress from1 = new MailAddress("balance.emulation.card@gmail.com", "Register");
                             MailAddress to1 = new MailAddress(login_r.Text);
                             MailMessage m1 = new MailMessage(from1, to1);
-                            if (check == "yes")
-                            {
-                                usersTableAdapter.InsertQuery1(surname.Text, name.Text, patronymic.Text, login_r.Text, pass_r.Password, check);
-                            }
-                            else
-                            {
-                                usersTableAdapter.InsertQuery(surname.Text, name.Text, patronymic.Text, login_r.Text, pass_r.Password, check, Convert.ToInt32(group_iner));
-                            }
+                            //if (check == "yes")
+                            //{
+                            //    usersTableAdapter.InsertQuery1(surname.Text, name.Text, patronymic.Text, login_r.Text, pass_r.Password, check);
+                            //}
+                            //else
+                            //{
+                            usersTableAdapter.InsertQuery(surname.Text, name.Text, patronymic.Text, login_r.Text, pass_r.Password, check, Convert.ToInt32(group_iner));
+                            //}
                             m1.Subject = "Регистрация";
                             m1.Body = "Регистрация прошла успешно. Ваш логин:  " + login_r.Text + " | Ваш пароль: " + pass_r.Password + " |";
                             m1.IsBodyHtml = true;
@@ -209,14 +209,14 @@ namespace Journal_Diplom
 
         private void check_staff(object sender, RoutedEventArgs e)
         {
-            RadioButton radioButton = (RadioButton)sender;
-            check = radioButton.Name;
-            if (check == "yes")
-            {
-                group.IsEnabled = false;
-                group.Text = "";
-            }
-            else group.IsEnabled = true;
+            //RadioButton radioButton = (RadioButton)sender;
+            //check = radioButton.Name;
+            //if (check == "yes")
+            //{
+            //    group.IsEnabled = false;
+            //    group.Text = "";
+            //}
+            //else group.IsEnabled = true;
         }
         private void inf_PreviewKeyDown(object sender, KeyEventArgs e)
         {

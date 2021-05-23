@@ -80,6 +80,8 @@
             <Button x:Name="permiss_canv" Content="Права пользователей" Canvas.Left="974" Canvas.Top="84" Width="167" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="{x:Null}" FontSize="12" Click="canv_next"/>
             <Button x:Name="discipline_canv" Content="Дисциплины" Canvas.Left="974" Canvas.Top="121" Width="167" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="{x:Null}" FontSize="12" Click="canv_next"/>
             <Frame x:Name="frame" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Hidden" NavigationUIVisibility="Hidden"/>
+            <Frame x:Name="frame_prepod" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Visible" NavigationUIVisibility="Hidden"/>
+            <Button x:Name="prepod_canv" Content="Кураторы" Canvas.Left="974" Canvas.Top="158" Width="167" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="{x:Null}" FontSize="12" Click="canv_next" Height="42" HorizontalContentAlignment="Center"/>
 
         </Canvas>
         <Canvas x:Name="permiss_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Visible" Margin="10,10,244,10">

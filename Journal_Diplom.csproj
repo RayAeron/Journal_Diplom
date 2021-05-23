@@ -85,6 +85,9 @@
     <Compile Include="Journal.cs">
       <DependentUpon>Journal.xsd</DependentUpon>
     </Compile>
+    <Compile Include="prepod_reg.xaml.cs">
+      <DependentUpon>prepod_reg.xaml</DependentUpon>
+    </Compile>
     <Compile Include="reck_pass.xaml.cs">
       <DependentUpon>reck_pass.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="prepod_reg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="reck_pass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
