@@ -20,6 +20,7 @@ namespace Journal_Diplom
         Journal Journal;
         usersTableAdapter usersTableAdapter;
         groupTableAdapter groupTableAdapter;
+        users2TableAdapter users2TableAdapter;
         string check = "no";
 
         public MainWindow()
@@ -44,6 +45,9 @@ namespace Journal_Diplom
             Journal = new Journal();
             usersTableAdapter = new usersTableAdapter();
             usersTableAdapter.Fill(Journal.users);
+
+            users2TableAdapter = new users2TableAdapter();
+            users2TableAdapter.Fill(Journal.users2);
 
             groupTableAdapter = new groupTableAdapter();
             groupTableAdapter.Fill(Journal.group);
@@ -165,38 +169,51 @@ namespace Journal_Diplom
             {
                 //try
                 //{
-                    usersTableAdapter.FillBy1(Journal.users, login_l.Text, pass_l.Password);
+                usersTableAdapter.FillBy1(Journal.users, login_l.Text, pass_l.Password);
+                if (!Journal.users.Rows.Count.Equals(0))
+                {
+                    usersTableAdapter.FillBy2(Journal.users, login_l.Text);
                     if (!Journal.users.Rows.Count.Equals(0))
                     {
-                        usersTableAdapter.FillBy2(Journal.users, login_l.Text);
-                        if (!Journal.users.Rows.Count.Equals(0))
+                        string permission = Convert.ToString(Journal.users.Rows[0]["is_staff"]);
+                        switch (permission)
                         {
-                            string permission = Convert.ToString(Journal.users.Rows[0]["is_staff"]);
-                            switch (permission)
-                            {
-                                case "yes":
+                            case "yes":
+                                string kurator = Convert.ToString(Journal.users2.Rows[2]["kurator"]);
+                                if (kurator != "kurator")
+                                {
+                                    select_kurator select_kurator = new select_kurator();
+                                    select_kurator.login.Content = login_l.Text;
+                                    select_kurator.Show();
+                                    this.Close();
+                                }
+                                else
+                                {
                                     Teacher Teacher = new Teacher();
                                     Teacher.login.Content = login_l.Text;
                                     Teacher.Show();
                                     this.Close();
-                                    break;
+                                }
+                                
+                                break;
 
-                                case "no":
-                                    Student Student = new Student();
-                                    Student.login.Content = login_l.Text;
-                                    Student.Show();
-                                    this.Close();
-                                    break;
+                            case "no":
+                                Student Student = new Student();
+                                Student.login.Content = login_l.Text;
+                                Student.Show();
+                                this.Close();
+                                break;
 
-                                case "adm":
-                                    Admin Admin = new Admin();
-                                    Admin.Show();
-                                    this.Close();
-                                    break;
-                            }
+                            case "adm":
+                                Admin Admin = new Admin();
+                                Admin.Show();
+                                this.Close();
+                                break;
+
                         }
                     }
-                    else error.Content = "Логин или пароль не совпадают";
+                }
+                else error.Content = "Логин или пароль не совпадают";
                 //}
                 //catch
                 //{

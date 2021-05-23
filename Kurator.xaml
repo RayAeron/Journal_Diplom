@@ -1,0 +1,12 @@
+﻿<mah:MetroWindow x:Class="Journal_Diplom.Kurator"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Панель куратора" Height="475.05" Width="905.567" ResizeMode="CanMinimize" Background="#FF252525" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label x:Name="login" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="#FF0767B3" FontWeight="Bold" FontSize="16" Margin="10,10,0,0"/>
+    </Grid>
+</mah:MetroWindow>

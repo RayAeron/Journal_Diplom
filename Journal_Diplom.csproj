@@ -85,11 +85,17 @@
     <Compile Include="Journal.cs">
       <DependentUpon>Journal.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Kurator.xaml.cs">
+      <DependentUpon>Kurator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="prepod_reg.xaml.cs">
       <DependentUpon>prepod_reg.xaml</DependentUpon>
     </Compile>
     <Compile Include="reck_pass.xaml.cs">
       <DependentUpon>reck_pass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="select_kurator.xaml.cs">
+      <DependentUpon>select_kurator.xaml</DependentUpon>
     </Compile>
     <Compile Include="Student.xaml.cs">
       <DependentUpon>Student.xaml</DependentUpon>
@@ -102,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Discipline_Frame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Kurator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,6 +140,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="reck_pass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="select_kurator.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
