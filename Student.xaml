@@ -10,7 +10,7 @@
         <Canvas x:Name="main_canv" Visibility="Visible" mah:ScrollViewerHelper.IsHorizontalScrollWheelEnabled="True">
             <Label x:Name="login" Content="" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Foreground="#FF0767B3" FontWeight="Bold" FontSize="16"/>
             <Button x:Name="mark_view" Content="Просмотр оценок" Canvas.Left="10" BorderBrush="#FF0767B3" Background="{x:Null}" Canvas.Top="52" FontSize="16" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Width="430" Foreground="#FF0767B3" Height="384" Click="back_l"/>
-            <Button x:Name="personal_cabinet" Content="Личный кабинет" BorderBrush="#FF0767B3" Background="{x:Null}" FontSize="16" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Width="416" Foreground="#FF0767B3" Canvas.Left="474" Canvas.Top="52" Height="377" Click="back_l"/>
+            <Button x:Name="personal_cabinet" Content="Личный кабинет" BorderBrush="#FF0767B3" Background="{x:Null}" FontSize="16" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Width="416" Foreground="#FF0767B3" Canvas.Left="474" Canvas.Top="52" Height="384" Click="back_l"/>
             <Label Content="|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xA;|&#xD;&#xA;|&#xD;&#xA;|" Canvas.Left="445" Canvas.Top="52" Foreground="#FF0767B3" Height="377" Width="24" HorizontalContentAlignment="Center" IsEnabled="False"/>
             <Button x:Name="exit" Content="" Canvas.Left="848" Canvas.Top="10" Width="42" BorderBrush="{x:Null}" Foreground="{x:Null}" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Height="29" Click="exit_Click">
                 <Button.Background>
