@@ -15,7 +15,7 @@
                     <ImageBrush ImageSource="log_out_icon_128821.png" Stretch="Uniform"/>
                 </Button.Background>
             </Button>
-            <Canvas x:Name="canv_mark_add_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Hidden">
+            <Canvas x:Name="canv_mark_add_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Visible">
                 <TextBox x:Name="searh" Height="32" Canvas.Left="320" Width="178" BorderBrush="#FF0078D7" HorizontalContentAlignment="Center" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" CaretBrush="#FF0078D7" Foreground="#FF0767B3"/>
                 <Button x:Name="search_btn" Content="Поиск по почте" Canvas.Left="503" Width="133" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" Click="search_btn_Click" FontSize="12"/>
                 <ComboBox x:Name="group_search" Canvas.Left="200" Canvas.Top="10" Width="120" Foreground="#FF0767B3" BorderBrush="#FF0767B3" Height="32"  HorizontalContentAlignment="Center" Visibility="Hidden"/>
@@ -81,10 +81,10 @@
             <Button x:Name="discipline_canv" Content="Дисциплины" Canvas.Left="974" Canvas.Top="121" Width="167" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="{x:Null}" FontSize="12" Click="canv_next"/>
             <Frame x:Name="frame" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Hidden" NavigationUIVisibility="Hidden"/>
             <Frame x:Name="frame_prepod" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Visible" NavigationUIVisibility="Hidden"/>
-            <Button x:Name="prepod_canv" Content="Кураторы" Canvas.Left="974" Canvas.Top="158" Width="167" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="{x:Null}" FontSize="12" Click="canv_next" Height="42" HorizontalContentAlignment="Center"/>
+            <Button x:Name="prepod_canv" Content="Кураторы" Canvas.Left="974" Canvas.Top="158" Width="167" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="{x:Null}" FontSize="12" Click="canv_next" Height="32" HorizontalContentAlignment="Center"/>
 
         </Canvas>
-        <Canvas x:Name="permiss_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Visible" Margin="10,10,244,10">
+        <Canvas x:Name="permiss_edit" Height="558" Canvas.Left="10" Canvas.Top="10" Width="944" Visibility="Hidden" Margin="10,10,244,10">
             <DataGrid x:Name="permiss_grid" Height="278" Canvas.Left="5" Canvas.Top="71" Width="929" Background="#FF252525" BorderBrush="#FF0767B3" Foreground="#FF0767B3"  SelectionChanged="permiss_grid_SelectionChanged" AutoGenerateColumns = "True" AutoGeneratingColumn="permiss_grid_AutoGeneratingColumn" HeadersVisibility="Row"/>
             <Button x:Name="edit_permiss" Content="Изменить" Canvas.Left="10" Canvas.Top="418" Width="924" BorderBrush="#FF0767B3" Foreground="White" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Background="#FF0767B3" FontSize="14" Click="edit_permiss_Click" IsEnabled="False"/>
             <ComboBox x:Name="permiss_combo" Canvas.Left="10" Canvas.Top="381" Width="924" Foreground="#FF0767B3" BorderBrush="#FF0767B3" Height="32"  HorizontalContentAlignment="Center">

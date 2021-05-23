@@ -162,7 +162,7 @@ namespace Journal_Diplom
             }
             
         }
-
+        public static string group_kurator { get; set; }
         private void vhod_Click(object sender, RoutedEventArgs e)
         {
             if (login_l.Text != "" && pass_l.Password != "")
@@ -175,41 +175,49 @@ namespace Journal_Diplom
                     usersTableAdapter.FillBy2(Journal.users, login_l.Text);
                     if (!Journal.users.Rows.Count.Equals(0))
                     {
-                        string permission = Convert.ToString(Journal.users.Rows[0]["is_staff"]);
-                        switch (permission)
+                        users2TableAdapter.FillBy1(Journal.users2, login_l.Text);
+                        if (!Journal.users.Rows.Count.Equals(0))
                         {
-                            case "yes":
-                                string kurator = Convert.ToString(Journal.users2.Rows[2]["kurator"]);
-                                if (kurator != "kurator")
-                                {
-                                    select_kurator select_kurator = new select_kurator();
-                                    select_kurator.login.Content = login_l.Text;
-                                    select_kurator.Show();
+                            string permission = Convert.ToString(Journal.users.Rows[0]["is_staff"]);
+                            string kurator = Convert.ToString(Journal.users2.Rows[0]["kurator"]);
+                            string kurator_group = Convert.ToString(Journal.users2.Rows[0]["kurator_group"]);
+                            group_kurator = kurator_group;
+                            switch (permission)
+                            {
+                                case "yes":
+                                    if (kurator == "kurator")
+                                    {
+                                        select_kurator select_kurator = new select_kurator();
+                                        select_kurator.login.Content = login_l.Text;
+                                        select_kurator.group_kurator.Content = kurator_group;
+
+                                        select_kurator.Show();
+                                        this.Close();
+                                    }
+                                    else
+                                    {
+                                        Teacher Teacher = new Teacher();
+                                        Teacher.login.Content = login_l.Text;
+                                        Teacher.Show();
+                                        this.Close();
+                                    }
+
+                                    break;
+
+                                case "no":
+                                    Student Student = new Student();
+                                    Student.login.Content = login_l.Text;
+                                    Student.Show();
                                     this.Close();
-                                }
-                                else
-                                {
-                                    Teacher Teacher = new Teacher();
-                                    Teacher.login.Content = login_l.Text;
-                                    Teacher.Show();
+                                    break;
+
+                                case "adm":
+                                    Admin Admin = new Admin();
+                                    Admin.Show();
                                     this.Close();
-                                }
-                                
-                                break;
+                                    break;
 
-                            case "no":
-                                Student Student = new Student();
-                                Student.login.Content = login_l.Text;
-                                Student.Show();
-                                this.Close();
-                                break;
-
-                            case "adm":
-                                Admin Admin = new Admin();
-                                Admin.Show();
-                                this.Close();
-                                break;
-
+                            }
                         }
                     }
                 }

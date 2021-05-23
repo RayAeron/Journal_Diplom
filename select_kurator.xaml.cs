@@ -37,6 +37,7 @@ namespace Journal_Diplom
         {
             Kurator Kurator = new Kurator();
             Kurator.login.Content = login.Content;
+            Kurator.group_kurator.Content = group_kurator.Content;
             Kurator.Show();
             this.Close();
         }

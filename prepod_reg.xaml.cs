@@ -101,6 +101,7 @@ namespace Journal_Diplom
             {
                 MessageBox.Show("Проверьте подключение к интернету");
             }
+            users2TableAdapter.FillBy(Journal.users2, check);
         }
 
         private void kurator_btn_add_Click(object sender, RoutedEventArgs e)
@@ -135,6 +136,10 @@ namespace Journal_Diplom
             {
                 e.Cancel = true;
             }
+            //if (propertyDescriptor.DisplayName == "Password" || propertyDescriptor.DisplayName == "Роль")
+            //{
+            //    e.Cancel = true;
+            //}
         }
 
         private void kurator_btn_del_Click(object sender, RoutedEventArgs e)

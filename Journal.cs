@@ -4,6 +4,10 @@
 
     partial class Journal
     {
+        partial class Mark_kuratorDataTable
+        {
+        }
+
         partial class usersDataTable
         {
         }
@@ -16,6 +20,10 @@
 
 namespace Journal_Diplom.JournalTableAdapters
 {
+    partial class Mark_kuratorTableAdapter
+    {
+    }
+
     partial class users2TableAdapter
     {
 

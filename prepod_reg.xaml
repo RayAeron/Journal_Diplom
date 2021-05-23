@@ -22,11 +22,13 @@
         <Label Content="Фамилия*" Foreground="#FF0767B3" Width="178" HorizontalContentAlignment="Center" Margin="14,208,752,326"/>
         <Label Content="Имя*" Foreground="#FF0767B3" HorizontalContentAlignment="Center" Margin="14,274,752,256"/>
         <Label Content="Отчество" Foreground="#FF0767B3" Width="178" HorizontalContentAlignment="Center" Margin="14,342,752,190"/>
-        <DataGrid x:Name="kurator_grid" Height="278" Background="#FF252525" BorderBrush="#FF0767B3" Foreground="#FF0767B3"  SelectionChanged="permiss_grid_SelectionChanged" HeadersVisibility="Row" Margin="273,65,10,215" AutoGeneratingColumn="kurator_grid_AutoGeneratingColumn"/>
+        <DataGrid x:Name="kurator_grid" Height="278" Background="#FF252525" BorderBrush="#FF0767B3" Foreground="#FF0767B3"  SelectionChanged="permiss_grid_SelectionChanged" HeadersVisibility="Row" Margin="273,60,10,220" AutoGeneratingColumn="kurator_grid_AutoGeneratingColumn"/>
         <Button x:Name="kurator_btn_add" Content="Добавить куратора" HorizontalAlignment="Left" Margin="273,423,0,0" VerticalAlignment="Top" Width="661"  Background="#FF0767B3" BorderBrush="{x:Null}" FontSize="12" Click="kurator_btn_add_Click" IsEnabled="False"/>
         <ComboBox x:Name="group" Background="#FF38393E" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Foreground="#FF0767B3" mah:ControlsHelper.FocusBorderBrush="#FF0767B3" Height="31" mah:ControlsHelper.MouseOverBorderBrush="#FF0767B3" Margin="273,387,10,140"/>
         <Label Content="Привязать группу" Foreground="#FF0767B3" HorizontalContentAlignment="Center" Margin="273,348,10,176"/>
         <Label x:Name="login" Content="" HorizontalAlignment="Left" Margin="321,473,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
         <Button x:Name="kurator_btn_del" Content="Удалить куратора" HorizontalAlignment="Left" Margin="273,460,0,0" VerticalAlignment="Top" Width="661"  Background="#FF0767B3" BorderBrush="{x:Null}" FontSize="12" IsEnabled="False" Click="kurator_btn_del_Click"/>
+        <Label Content="Добавить преподавателя" Foreground="#FF0767B3" HorizontalContentAlignment="Center" Margin="10,27,752,497" FontSize="14"/>
+        <Label Content="Добавить куратора" Foreground="#FF0767B3" HorizontalContentAlignment="Center" Margin="273,21,10,503" FontSize="14"/>
     </Grid>
 </Page>
