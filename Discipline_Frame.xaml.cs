@@ -53,7 +53,7 @@ namespace Journal_Diplom
             Mark_VTableAdapter.Fill(Journal.Mark_V);
 
             Discipline_VTableAdapter = new Discipline_VTableAdapter();
-            Discipline_VTableAdapter.Fill(Journal.Discipline_V);
+            Dwiscipline_VTableAdapter.Fill(Journal.Discipline_V);
             discipline_grid.ItemsSource = Journal.Discipline_V.DefaultView;
             discipline_grid.CanUserDeleteRows = false;
             discipline_grid.CanUserAddRows = false;

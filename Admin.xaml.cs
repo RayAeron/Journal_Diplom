@@ -882,6 +882,7 @@ namespace Journal_Diplom
                 group_btn_permiss.IsEnabled = false;
             }
         }
+
     }
 }
 
